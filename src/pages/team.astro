@@ -1,0 +1,414 @@
+---
+import "../styles/global.css";
+
+const faculty = [
+  {
+    name: "Dr. V. Baby",
+    role: "Head of the Department",
+    department: "Department of CSE",
+    image:
+      "https://vnrvjietcsi.com/assets/baby-BWYN5V72.webp",
+  },
+  {
+    name: "Dr. C. Kiran Mai",
+    role: "Faculty Advisor",
+    department: "CSI Student Branch Chapter",
+    image:
+      "https://vnrvjietcsi.com/assets/kiranmaimam-Bq8f0WLl.webp",
+  },
+  {
+    name: "Dr. S. Nagini",
+    role: "Faculty Advisor",
+    department: "CSI Student Branch Chapter",
+    image:
+      "https://vnrvjietcsi.com/assets/nagini-BA8Lwbpk.webp",
+  },
+  {
+    name: "Dr. N. Sandeep Chaitanya",
+    role: "Faculty Coordinator",
+    department: "CSI Student Branch Chapter",
+    image:
+      "https://vnrvjietcsi.com/assets/sandeep-CuvIwyiA.webp",
+  },
+  {
+    name: "Mr. SK Saddam Hussain",
+    role: "Faculty Coordinator",
+    department: "CSI Student Branch Chapter",
+    image:
+      "https://vnrvjietcsi.com/assets/saddamhussain-hLR1HDrw.webp",
+  },
+];
+
+/*
+  Replace these with your actual student organisers.
+  Add/remove objects as required.
+*/
+const studentOrganisers = [
+  {
+    name: "Arjun Reddy",
+    role: "Chairperson",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "Meera Nair",
+    role: "Vice Chairperson",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "Karthik Varma",
+    role: "Secretary",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "Ananya Rao",
+    role: "Technical Lead",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "Rohan Desai",
+    role: "Events Lead",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "Ishita Menon",
+    role: "Creative Lead",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+];
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Our Team | CSI CVRCE</title>
+
+  <meta
+    name="description"
+    content="Meet the faculty coordinators and student organisers of CSI CVRCE."
+  />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="/" class="brand">
+
+        <img
+          src="/images/cvrlogo.png"
+          alt="CVR College of Engineering Logo"
+          class="cvr-logo"
+        />
+
+        <span class="divider"></span>
+
+        <img
+          src="/images/csicvrlogo.png"
+          alt="CSI Logo"
+          class="csi-logo"
+        />
+
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/events">Events</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/team" class="active">Team</a>
+      </nav>
+
+      <a href="/join-us" class="nav-button">
+        Join Us
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="team-hero">
+
+      <div class="hero-badge">
+        <span></span>
+        CSI CVRCE
+      </div>
+
+      <h1>
+        Our
+        <span>Team.</span>
+      </h1>
+
+      <p>
+        Meet the faculty coordinators and student
+        organisers driving the CSI community forward.
+      </p>
+
+    </section>
+
+
+    <!-- FACULTY -->
+
+    <section class="team-section">
+
+      <div class="section-label">
+        <span>01</span>
+        FACULTY COORDINATORS
+      </div>
+
+      <div class="section-heading">
+
+        <h2>
+          Guided by
+          <span>experience.</span>
+        </h2>
+
+        <p>
+          Dedicated faculty members who mentor,
+          guide and support the CSI Student Branch.
+        </p>
+
+      </div>
+
+
+      <div class="faculty-grid">
+
+        {faculty.map((person) => (
+
+          <article class="faculty-card">
+
+            <div class="faculty-image">
+
+              <img
+                src={person.image}
+                alt={person.name}
+                loading="lazy"
+              />
+
+            </div>
+
+            <div class="faculty-info">
+
+              <span class="person-number">
+                FACULTY
+              </span>
+
+              <h3>
+                {person.name}
+              </h3>
+
+              <strong>
+                {person.role}
+              </strong>
+
+              <p>
+                {person.department}
+              </p>
+
+            </div>
+
+          </article>
+
+        ))}
+
+      </div>
+
+    </section>
+
+
+    <!-- STUDENT ORGANISERS -->
+
+    <section class="team-section student-section">
+
+      <div class="section-label">
+        <span>02</span>
+        STUDENT ORGANISERS
+      </div>
+
+      <div class="section-heading">
+
+        <h2>
+          Driven by
+          <span>students.</span>
+        </h2>
+
+        <p>
+          The student leadership team responsible for
+          building, organising and growing the CSI community.
+        </p>
+
+      </div>
+
+
+      <div class="student-grid">
+
+        {studentOrganisers.map((person) => (
+
+          <article class="student-card">
+
+            <div class="student-image">
+
+              <img
+                src={person.image}
+                alt={person.name}
+                loading="lazy"
+              />
+
+              <div class="student-index">
+                +
+              </div>
+
+            </div>
+
+            <div class="student-info">
+
+              <h3>
+                {person.name}
+              </h3>
+
+              <span>
+                {person.role}
+              </span>
+
+            </div>
+
+          </article>
+
+        ))}
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="team-cta">
+
+      <div>
+
+        <div class="hero-badge">
+          <span></span>
+          BE PART OF THE COMMUNITY
+        </div>
+
+        <h2>
+          Ready to
+          <span>lead?</span>
+        </h2>
+
+        <p>
+          Join CSI CVRCE and become part of the
+          next generation of technology leaders.
+        </p>
+
+        <a href="/join-us" class="primary-button">
+          Join CSI
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+
+        <div class="footer-logos">
+
+          <img
+            src="/images/cvrlogo.png"
+            alt="CVR College of Engineering"
+          />
+
+          <img
+            src="/images/csicvrlogo.png"
+            alt="CSI"
+          />
+
+        </div>
+
+        <h3>CSI CVRCE</h3>
+
+        <p>
+          Computer Society of India - CVRCE Student
+          Chapter is committed to the advancement of
+          theory and practice of Computer Engineering
+          and Technology Systems.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Quick Links</h4>
+
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/events">Events</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/team">Team</a>
+        <a href="/join-us">Join Us</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Contact Us</h4>
+
+        <a href="mailto:csicvrce@gmail.com">
+          csicvrce@gmail.com
+        </a>
+
+        <a
+          href="https://maps.app.goo.gl/4uJSrhRj8UF7CsR88"
+          target="_blank"
+        >
+          Ibrahimpatnam (Mandal), Pocharam Rd, Vastunagar, Mangalpalli (Village), Telangana 501510
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © {new Date().getFullYear()} CSI CVRCE
+      </span>
+
+      <span>
+        Built with purpose.
+      </span>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

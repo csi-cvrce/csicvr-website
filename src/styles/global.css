@@ -95,7 +95,7 @@ a {
 
 .desktop-nav a {
   color: #bdbdbd;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   transition: 0.25s;
 }
@@ -109,7 +109,7 @@ a {
   color: #080808;
   padding: 11px 18px;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   transition: 0.25s;
 }
@@ -2660,6 +2660,464 @@ footer {
     grid-template-columns: 1fr;
 
     gap: 60px;
+  }
+
+}
+
+
+/* =========================================
+   TEAM PAGE
+========================================= */
+
+.team-hero {
+  min-height: 620px;
+
+  padding: 160px 8% 100px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-bottom: 1px solid #222;
+}
+
+.team-hero h1 {
+  margin: 25px 0;
+
+  font-size: clamp(75px, 10vw, 145px);
+
+  line-height: .82;
+
+  letter-spacing: -8px;
+}
+
+.team-hero h1 span {
+  display: block;
+
+  color: var(--yellow);
+}
+
+.team-hero p {
+  max-width: 600px;
+
+  color: #777;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.team-section {
+  padding: 120px 8%;
+}
+
+.section-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  color: #777;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-label span {
+  color: var(--yellow);
+}
+
+.section-heading {
+  margin-top: 40px;
+
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(55px, 6vw, 90px);
+
+  line-height: .9;
+
+  letter-spacing: -6px;
+}
+
+.section-heading h2 span {
+  color: var(--yellow);
+}
+
+.section-heading p {
+  max-width: 400px;
+
+  color: #777;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   FACULTY
+========================================= */
+
+.faculty-grid {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.faculty-card {
+  background: #0b0b0b;
+
+  border: 1px solid #292929;
+
+  transition: .3s;
+
+  overflow: hidden;
+}
+
+.faculty-card:hover {
+  border-color: var(--yellow);
+
+  transform: translateY(-6px);
+}
+
+.faculty-image {
+  height: 390px;
+
+  background: #111;
+
+  overflow: hidden;
+}
+
+.faculty-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: grayscale(100%);
+
+  transition: .4s;
+}
+
+.faculty-card:hover img {
+  filter: grayscale(0%);
+
+  transform: scale(1.04);
+}
+
+.faculty-info {
+  padding: 28px;
+}
+
+.person-number {
+  color: var(--yellow);
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.faculty-info h3 {
+  margin: 12px 0 8px;
+
+  font-size: 22px;
+}
+
+.faculty-info strong {
+  display: block;
+
+  color: white;
+
+  font-size: 13px;
+}
+
+.faculty-info p {
+  margin-top: 7px;
+
+  color: #666;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   STUDENTS
+========================================= */
+
+.student-section {
+  background: #0a0a0a;
+
+  border-top: 1px solid #222;
+
+  border-bottom: 1px solid #222;
+}
+
+.student-grid {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.student-card {
+  border: 1px solid #292929;
+
+  background: #080808;
+
+  transition: .3s;
+
+  overflow: hidden;
+}
+
+.student-card:hover {
+  border-color: var(--yellow);
+
+  transform: translateY(-5px);
+}
+
+.student-image {
+  height: 330px;
+
+  position: relative;
+
+  background: #111;
+
+  overflow: hidden;
+}
+
+.student-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: grayscale(100%);
+
+  transition: .4s;
+}
+
+.student-card:hover img {
+  filter: grayscale(0%);
+
+  transform: scale(1.04);
+}
+
+.student-index {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #444;
+
+  background: #080808;
+
+  color: var(--yellow);
+}
+
+.student-info {
+  padding: 22px;
+}
+
+.student-info h3 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+.student-info span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--yellow);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.team-cta {
+  padding: 140px 8%;
+
+  text-align: center;
+
+  border-bottom: 1px solid #222;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.team-cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #222;
+
+  border-radius: 50%;
+}
+
+.team-cta > div {
+  position: relative;
+
+  z-index: 2;
+}
+
+.team-cta h2 {
+  margin: 30px 0 20px;
+
+  font-size: clamp(60px, 8vw, 110px);
+
+  line-height: .85;
+
+  letter-spacing: -7px;
+}
+
+.team-cta h2 span {
+  color: var(--yellow);
+}
+
+.team-cta p {
+  color: #777;
+
+  margin-bottom: 35px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .faculty-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .student-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .team-hero {
+    padding:
+      130px 25px
+      80px;
+
+    min-height: 550px;
+  }
+
+  .team-hero h1 {
+    font-size: 70px;
+
+    letter-spacing: -5px;
+  }
+
+  .team-section {
+    padding:
+      90px 25px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading h2 {
+    font-size: 55px;
+  }
+
+  .section-heading p {
+    margin-top: 25px;
+  }
+
+  .faculty-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 50px;
+  }
+
+  .faculty-image {
+    height: 420px;
+  }
+
+  .student-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 50px;
+  }
+
+  .student-image {
+    height: 400px;
+  }
+
+  .team-cta {
+    padding:
+      100px 25px;
+  }
+
+  .team-cta h2 {
+    font-size: 65px;
+
+    letter-spacing: -5px;
   }
 
 }
