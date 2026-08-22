@@ -1,17 +1,440 @@
 ---
+import "../styles/global.css";
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/aboutus" },
+  { name: "Events", href: "/events" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Team", href: "/team" },
+  { name: "VJH 2k25", href: "/vjh" },
+  { name: "Magazines", href: "/magazines" },
+  { name: "Join Us", href: "/join-us" },
+];
+
+const cards = [
+  {
+    title: "Events",
+    description: "Upcoming and conducted technical events, workshops and hackathons.",
+    link: "/events",
+    number: "01",
+  },
+  {
+    title: "Magazines",
+    description: "Stay updated with our technical articles, achievements and monthly digest.",
+    link: "/magazines",
+    number: "02",
+  },
+  {
+    title: "Join Us",
+    description: "Become a member of our growing community of technology enthusiasts.",
+    link: "/join-us",
+    number: "03",
+  },
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>CSI VNRVJIET | Computer Society of India</title>
+
+    <meta
+      name="description"
+      content="Computer Society of India - VNRVJIET Student Chapter. Learn, innovate and connect with technology professionals."
+    />
+
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-container">
+
+        <a href="/" class="brand">
+          <img
+            src="https://vnrvjietcsi.com/assets/VNRVJIET%20New%20Yellow%20and%20Black-bBQPsvV0.webp"
+            alt="VNRVJIET Logo"
+            class="vnr-logo"
+          />
+
+          <span class="divider"></span>
+
+          <img
+            src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+            alt="CSI Logo"
+            class="csi-logo"
+          />
+        </a>
+
+        <nav class="desktop-nav">
+          {navLinks.map((link) => (
+            <a href={link.href}>{link.name}</a>
+          ))}
+        </nav>
+
+        <a href="/join-us" class="nav-button">
+          Join Us
+        </a>
+
+        <button class="mobile-menu" aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+      <section class="hero">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+          <div class="hero-badge">
+            <span></span>
+            CSI VNRVJIET STUDENT CHAPTER
+          </div>
+
+          <h1>
+            Computer
+            <span>Society</span>
+            of India
+          </h1>
+
+          <p>
+            Elevate your tech journey — learn, innovate, and connect
+            with like-minded professionals.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="/join-us" class="primary-button">
+              Join Us
+              <span>↗</span>
+            </a>
+
+            <a href="/aboutus" class="secondary-button">
+              Learn More
+            </a>
+          </div>
+
+        </div>
+
+        <div class="hero-logo">
+          <div class="logo-circle">
+            <img
+              src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+              alt="CSI VNRVJIET"
+            />
+          </div>
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+        </div>
+
+      </section>
+
+
+      <!-- INTRO -->
+      <section class="intro section">
+
+        <div class="section-label">
+          <span>01</span>
+          WHO WE ARE
+        </div>
+
+        <div class="intro-grid">
+
+          <div>
+            <h2>
+              CSI
+              <span>VNRVJIET</span>
+            </h2>
+
+            <p class="large-text">
+              Empowering technology professionals
+              <strong>since 2004.</strong>
+            </p>
+          </div>
+
+          <div class="intro-text">
+            <p>
+              Computer Society of India - VNRVJIET Student Chapter
+              is committed to the advancement of theory and practice
+              of Computer Engineering and Technology Systems.
+            </p>
+
+            <a href="/aboutus" class="text-link">
+              Discover our story
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- MISSION -->
+      <section class="mission section">
+
+        <div class="section-label">
+          <span>02</span>
+          OUR MISSION
+        </div>
+
+        <div class="mission-grid">
+
+          <div class="mission-heading">
+            <h2>
+              Building the
+              <span>next generation.</span>
+            </h2>
+          </div>
+
+          <div class="mission-content">
+
+            <p>
+              To provide a dynamic, innovative, and flexible curriculum
+              that equips students with problem-solving skills to
+              strengthen their career prospects.
+            </p>
+
+            <p>
+              To foster inquisitive-driven research among students
+              and staff, reinforcing domain knowledge while addressing
+              societal issues.
+            </p>
+
+            <p>
+              To inculcate ethical values, leadership qualities,
+              and professional behavior for improving global
+              living standards.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- CARDS -->
+      <section class="services section">
+
+        <div class="section-top">
+
+          <div>
+            <div class="section-label">
+              <span>03</span>
+              EXPLORE
+            </div>
+
+            <h2>
+              Something for
+              <span>everyone.</span>
+            </h2>
+          </div>
+
+          <p>
+            Learn. Build. Collaborate. Grow.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+          {cards.map((card) => (
+            <a href={card.link} class="feature-card">
+
+              <div class="card-number">
+                {card.number}
+              </div>
+
+              <div class="card-content">
+                <h3>{card.title}</h3>
+
+                <p>
+                  {card.description}
+                </p>
+              </div>
+
+              <div class="card-arrow">
+                ↗
+              </div>
+
+            </a>
+          ))}
+
+        </div>
+
+      </section>
+
+
+      <!-- QUOTE -->
+      <section class="quote-section">
+
+        <div class="quote-mark">
+          “
+        </div>
+
+        <blockquote>
+          CSI provides a great platform for learning beyond
+          the classroom through workshops, hackathons, and
+          technical events. It helps members stay updated with
+          industry trends and enhances their problem-solving skills.
+        </blockquote>
+
+        <div class="quote-author">
+          <div class="author-line"></div>
+
+          <div>
+            <strong>Dr. V. Baby</strong>
+            <span>HOD, CSE Department</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- CTA -->
+      <section class="cta section">
+
+        <div class="cta-inner">
+
+          <div>
+            <div class="section-label">
+              <span>04</span>
+              GET INVOLVED
+            </div>
+
+            <h2>
+              Your next idea
+              <span>starts here.</span>
+            </h2>
+
+            <p>
+              Join a community of students who are curious,
+              creative and ready to build the future.
+            </p>
+          </div>
+
+          <a href="/join-us" class="cta-button">
+            Join CSI
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <div class="footer-logos">
+
+            <img
+              src="https://vnrvjietcsi.com/assets/VNRVJIET%20New%20Yellow%20and%20Black-bBQPsvV0.webp"
+              alt="VNRVJIET"
+            />
+
+            <img
+              src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+              alt="CSI"
+            />
+
+          </div>
+
+          <h3>CSI VNRVJIET</h3>
+
+          <p>
+            Computer Society of India - VNRVJIET Student Chapter
+            is committed to advancing computer engineering and
+            technology systems.
+          </p>
+
+          <div class="socials">
+
+            <a
+              href="https://www.instagram.com/csi_vnrvjiet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/csi-vnrvjiet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Quick Links</h4>
+
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/magazines">Magazines</a>
+          <a href="/team">Team</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/join-us">Join Us</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Contact Us</h4>
+
+          <a
+            href="https://maps.app.goo.gl/S7DcmD3pR1wU3ywq9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VNRVJIET, Hyderabad
+          </a>
+
+          <a href="mailto:csisbl@vnrvjiet.in">
+            csisbl@vnrvjiet.in
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © {new Date().getFullYear()} CSI VNRVJIET
+        </span>
+
+        <span>
+          Built with purpose.
+        </span>
+
+      </div>
+
+    </footer>
+
+  </body>
 </html>
