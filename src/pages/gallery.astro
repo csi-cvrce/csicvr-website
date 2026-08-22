@@ -2,18 +2,18 @@
 import "../styles/global.css";
 
 const gallery = [
-  { title: "CSI CVRCE Moment 01", date: "2026", image: "/images/gallery/IMG_3070.JPG" },
-  { title: "CSI CVRCE Moment 02", date: "2026", image: "/images/gallery/IMG_3074.JPG" },
-  { title: "CSI CVRCE Moment 03", date: "2026", image: "/images/gallery/IMG_3108.JPG" },
-  { title: "CSI CVRCE Moment 04", date: "2026", image: "/images/gallery/IMG_3111.JPG" },
-  { title: "CSI CVRCE Moment 05", date: "2026", image: "/images/gallery/IMG_3113.JPG" },
-  { title: "CSI CVRCE Moment 06", date: "2026", image: "/images/gallery/IMG_3114.JPG" },
-  { title: "CSI CVRCE Moment 07", date: "2026", image: "/images/gallery/IMG_3126.jpg" },
-  { title: "CSI CVRCE Moment 08", date: "2026", image: "/images/gallery/IMG_3134.jpg" },
-  { title: "CSI CVRCE Moment 09", date: "2026", image: "/images/gallery/IMG_3138.JPG" },
-  { title: "CSI CVRCE Moment 10", date: "2026", image: "/images/gallery/IMG_8453.JPG" },
-  { title: "CSI CVRCE Moment 11", date: "2026", image: "/images/gallery/20260129_111829.jpg" },
-  { title: "CSI CVRCE Moment 12", date: "2026", image: "/images/gallery/20260129_120031.jpg" },
+  { title: "CSI CVRCE Moment 01", date: "2026", image: "/images/gallery/optimized/IMG_3070.webp" },
+  { title: "CSI CVRCE Moment 02", date: "2026", image: "/images/gallery/optimized/IMG_3074.webp" },
+  { title: "CSI CVRCE Moment 03", date: "2026", image: "/images/gallery/optimized/IMG_3108.webp" },
+  { title: "CSI CVRCE Moment 04", date: "2026", image: "/images/gallery/optimized/IMG_3111.webp" },
+  { title: "CSI CVRCE Moment 05", date: "2026", image: "/images/gallery/optimized/IMG_3113.webp" },
+  { title: "CSI CVRCE Moment 06", date: "2026", image: "/images/gallery/optimized/IMG_3114.webp" },
+  { title: "CSI CVRCE Moment 07", date: "2026", image: "/images/gallery/optimized/IMG_3126.webp" },
+  { title: "CSI CVRCE Moment 08", date: "2026", image: "/images/gallery/optimized/IMG_3134.webp" },
+  { title: "CSI CVRCE Moment 09", date: "2026", image: "/images/gallery/optimized/IMG_3138.webp" },
+  { title: "CSI CVRCE Moment 10", date: "2026", image: "/images/gallery/optimized/IMG_8453.webp" },
+  { title: "CSI CVRCE Moment 11", date: "2026", image: "/images/gallery/optimized/20260129_111829.webp" },
+  { title: "CSI CVRCE Moment 12", date: "2026", image: "/images/gallery/optimized/20260129_120031.webp" },
 ];
 ---
 
@@ -139,7 +139,8 @@ const gallery = [
                 <img
                   src={item.image}
                   alt={item.title}
-                  loading={index < 3 ? "eager" : "lazy"}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : "auto"}
                   decoding="async"
                 />
 
