@@ -1,0 +1,416 @@
+---
+import "../styles/global.css";
+
+const gallery = [
+  {
+    title: "CSI CVRCE Team",
+    date: "2026",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Gallery | CSI CVRCE</title>
+
+    <meta
+      name="description"
+      content="Explore moments from CSI CVRCE events, workshops, competitions and activities."
+    />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+      <div class="nav-container">
+
+        <a href="/" class="brand">
+
+          <img
+            src="/images/cvrlogo.png"
+            alt="CVR College of Engineering"
+            class="cvr-logo"
+          />
+
+          <span class="divider"></span>
+
+          <img
+            src="/images/csicvrlogo.png"
+            alt="CSI"
+            class="csi-logo"
+          />
+
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery" class="active">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/magazines">Magazines</a>
+        </nav>
+
+        <a href="/join-us" class="nav-button">
+          Join Us
+        </a>
+
+      </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+      <section class="gallery-hero">
+
+        <div class="hero-badge">
+          <span></span>
+          CSI CVRCE
+        </div>
+
+        <h1>
+          Our
+          <span>Gallery.</span>
+        </h1>
+
+        <p>
+          Capturing moments of innovation, learning,
+          collaboration and growth.
+        </p>
+
+      </section>
+           CSI CVRCE what it is.
+
+      <!-- GALLERY -->
+
+      <section class="gallery-section">
+
+        <div class="gallery-top">
+
+          <div>
+            <div class="section-label">
+              <span>01</span>
+              MOMENTS
+            </div>
+
+            <h2>
+              Built.
+              <span>Captured.</span>
+            </h2>
+          </div>
+
+          <p>
+            A glimpse into the workshops, events,
+            competitions and communities that make
+            CSI CVRCE what it is.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+          {gallery.map((item, index) => (
+
+            <button
+              class={`gallery-card ${
+                index === 0 ? "gallery-featured" : ""
+              }`}
+              data-image={item.image}
+              data-title={item.title}
+              aria-label={`Open ${item.title}`}
+            >
+
+              <div class="gallery-image">
+
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading={index < 3 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+
+                <div class="gallery-overlay">
+
+                  <span class="view-icon">
+                    ↗
+                  </span>
+
+                  <div>
+                    <span class="gallery-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <h3>
+                      {item.title}
+                    </h3>
+
+                    <p>
+                      {item.date}
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </button>
+
+          ))}
+
+        </div>
+
+      </section>
+
+
+      <!-- CTA -->
+
+      <section class="gallery-cta">
+
+        <div>
+
+          <div class="hero-badge">
+            <span></span>
+            CSI CVRCE
+          </div>
+
+          <h2>
+            Make the next
+            <span>memory.</span>
+          </h2>
+
+          <p>
+            Join CSI and be part of the next workshop,
+            hackathon or technical event.
+          </p>
+
+          <a href="/join-us" class="primary-button">
+            Join CSI
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- LIGHTBOX -->
+
+    <div
+      id="lightbox"
+      class="lightbox"
+      aria-hidden="true"
+    >
+
+      <button
+        id="lightbox-close"
+        class="lightbox-close"
+        aria-label="Close image"
+      >
+        ×
+      </button>
+
+      <div class="lightbox-content">
+
+        <img
+          id="lightbox-image"
+          src=""
+          alt=""
+        />
+
+        <div id="lightbox-title"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <div class="footer-logos">
+
+            <img
+              src="/images/cvrlogo.png"
+              alt="CVR College of Engineering"
+            />
+
+            <img
+              src="/images/csicvrlogo.png"
+              alt="CSI"
+            />
+
+          </div>
+
+          <h3>CSI CVRCE</h3>
+
+          <p>
+            Computer Society of India - CVRCE
+            Student Chapter is committed to the
+            advancement of theory and practice of
+            Computer Engineering and Technology Systems.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Quick Links</h4>
+
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/join-us">Join Us</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Contact Us</h4>
+
+          <a href="mailto:csicvrce@gmail.com">
+            csicvrce@gmail.com
+          </a>
+
+          <a
+            href="https://maps.app.goo.gl/4uJSrhRj8UF7CsR88"
+            target="_blank"
+          >
+            Ibrahimpatnam (Mandal), Pocharam Rd, Vastunagar, Mangalpalli (Village), Telangana 501510
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © {new Date().getFullYear()} CSI CVRCE
+        </span>
+
+        <span>
+          Built with purpose.
+        </span>
+
+      </div>
+
+    </footer>
+
+
+    <!-- LIGHTBOX SCRIPT -->
+
+    <script>
+      const lightbox =
+        document.getElementById("lightbox");
+
+      const lightboxImage =
+        document.getElementById("lightbox-image");
+
+      const lightboxTitle =
+        document.getElementById("lightbox-title");
+
+      const closeButton =
+        document.getElementById("lightbox-close");
+
+      document
+        .querySelectorAll(".gallery-card")
+        .forEach((card) => {
+
+          card.addEventListener("click", () => {
+
+            const image =
+              card.getAttribute("data-image");
+
+            const title =
+              card.getAttribute("data-title");
+
+            lightboxImage.src = image;
+            lightboxImage.alt = title;
+            lightboxTitle.textContent = title;
+
+            lightbox.classList.add("open");
+
+            lightbox.setAttribute(
+              "aria-hidden",
+              "false"
+            );
+
+            document.body.style.overflow = "hidden";
+          });
+
+        });
+
+
+      function closeLightbox() {
+
+        lightbox.classList.remove("open");
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        document.body.style.overflow = "";
+
+        setTimeout(() => {
+          lightboxImage.src = "";
+        }, 250);
+      }
+
+
+      closeButton.addEventListener(
+        "click",
+        closeLightbox
+      );
+
+
+      lightbox.addEventListener(
+        "click",
+        (event) => {
+
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+
+        }
+      );
+
+
+      document.addEventListener(
+        "keydown",
+        (event) => {
+
+          if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("open")
+          ) {
+            closeLightbox();
+          }
+
+        }
+      );
+    </script>
+
+  </body>
+</html>
