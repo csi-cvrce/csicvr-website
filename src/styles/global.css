@@ -69,7 +69,7 @@ a {
   gap: 14px;
 }
 
-.vnr-logo {
+.cvr-logo {
   width: 72px;
   height: 48px;
   object-fit: contain;
@@ -770,7 +770,7 @@ footer {
     padding: 0 18px;
   }
 
-  .vnr-logo {
+  .cvr-logo {
     width: 60px;
   }
 
