@@ -1,43 +1,84 @@
-# Astro Starter Kit: Minimal
+# CSI CVRCE Website
 
-```sh
-npm create astro@latest -- --template minimal
+The official website for the Computer Society of India (CSI) student chapter at CVR College of Engineering. The site highlights the chapter's mission, events, gallery, team, and membership information.
+
+## Built With
+
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- Static assets served from `public/`
+
+## Requirements
+
+- Node.js 22.12 or newer
+- npm
+
+## Getting Started
+
+Install dependencies and start the local development server:
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The development site is available at `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Available Commands
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create the production site in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro -- --help` | Display Astro CLI help |
+
+## Site Pages
+
+Pages live in `src/pages/` and map directly to routes:
+
+| File | Route | Purpose |
+| --- | --- | --- |
+| `index.astro` | `/` | Homepage and chapter overview |
+| `aboutus.astro` | `/aboutus` | Chapter background and mission |
+| `events.astro` | `/events` | Technical events and activities |
+| `gallery.astro` | `/gallery` | Chapter image gallery |
+| `team.astro` | `/team` | Faculty, student, executive, and advisory teams |
+| `join-us.astro` | `/join-us` | Membership call to action and registration form |
+
+The homepage includes a `/blog` link. Add `src/pages/blog.astro` when the blog page is ready.
+
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+	pages/       Astro pages and routes
+	styles/      Shared site styles
+public/
+	images/      Logos, team photos, and gallery images
+dist/          Generated static output after npm run build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Updating Content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Update page text and page-specific data in the relevant file under `src/pages/`.
+- Add gallery images to `public/images/gallery/` and register them in `src/pages/gallery.astro`.
+- Add team images to `public/images/team/` and update the team data in `src/pages/team.astro`.
+- Shared visual styles are defined in `src/styles/global.css`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Production Build
 
-## 🧞 Commands
+Run the build before publishing:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+The generated static site is written to `dist/` and can be deployed to any static hosting provider.
 
-## 👀 Want to learn more?
+## Links
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- GitHub: https://github.com/csi-cvrce
+- Instagram: https://www.instagram.com/csi_cvr/
+- LinkedIn: https://www.linkedin.com/company/csi-cvrce/
+- Astro documentation: https://docs.astro.build/
