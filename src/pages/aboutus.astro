@@ -1,0 +1,580 @@
+---
+import "../styles/global.css";
+
+const achievements = [
+  { year: "2010", title: "Best Student Chapter Award" },
+  { year: "2020", title: "Best Accredited Student Branch Award during CSI 2020 Annual Convention" },
+  { year: "2020", title: "CSI Longest Continuous Student Branch Coordinator Award during CSI 2020 Annual Convention" },
+  { year: "2020", title: "Best Committed Student Branch Activist Award during CSI 2020 Annual Convention" },
+  { year: "2023", title: "Largest CSI Student Branch Award" },
+  { year: "2023", title: "Outstanding Engineering Institute for Research and Innovation Award" },
+  { year: "2023", title: "Outstanding Institute with Best Placements Award" },
+  { year: "2023", title: "Young Researcher Award" },
+  { year: "2023", title: "Outstanding Contribution to CSI Award" },
+  { year: "2021", title: "Received ₹1 Lakh from AICTE under SPICES" },
+];
+
+const initiatives = [
+  "Importance of Cyber Security, usage of Smart Mobiles & How to get rid of fake calls for villagers",
+  "Digitalization in Rural Areas",
+  "Digitalization, Research & Employment Opportunities",
+  "Smart Resource Utilization & Menstrual Hygiene Management",
+  "Awareness on Hygiene Management",
+  "Awareness on various courses available after schooling",
+  "Awareness on Road Safety",
+  "Guided 10th grade students of Govt. School on career paths and provided exam kits for success",
+  "Awareness on COVID-19 e-outreach events",
+];
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/aboutus" },
+  { name: "Events", href: "/events" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Team", href: "/team" },
+  { name: "VJH 2k25", href: "/vjh" },
+  { name: "Magazines", href: "/magazines" },
+  { name: "Join Us", href: "/join-us" },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>About CSI VNRVJIET</title>
+
+    <meta
+      name="description"
+      content="Learn about CSI SBC VNRVJIET, its vision, mission, achievements and social impact initiatives."
+    />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+      <div class="nav-container">
+
+        <a href="/" class="brand">
+          <img
+            src="https://vnrvjietcsi.com/assets/VNRVJIET%20New%20Yellow%20and%20Black-bBQPsvV0.webp"
+            alt="VNRVJIET Logo"
+            class="vnr-logo"
+          />
+
+          <span class="divider"></span>
+
+          <img
+            src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+            alt="CSI Logo"
+            class="csi-logo"
+          />
+        </a>
+
+        <nav class="desktop-nav">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class={link.name === "About Us" ? "active-nav" : ""}
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        <a href="/join-us" class="nav-button">
+          Join Us
+        </a>
+
+        <button class="mobile-menu" aria-label="Open menu">
+          ☰
+        </button>
+
+      </div>
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="about-hero">
+
+      <div class="about-hero-content">
+
+        <div class="hero-badge">
+          <span></span>
+          ABOUT CSI VNRVJIET
+        </div>
+
+        <h1>
+          More than a
+          <span>student chapter.</span>
+        </h1>
+
+        <p>
+          A community built around technology, learning,
+          research, leadership and meaningful impact.
+        </p>
+
+      </div>
+
+      <div class="about-hero-number">
+        2004
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-story section">
+
+      <div class="section-label">
+        <span>01</span>
+        OUR STORY
+      </div>
+
+      <div class="story-grid">
+
+        <div>
+          <h2>
+            CSI SBC
+            <span>VNRVJIET</span>
+          </h2>
+        </div>
+
+        <div class="story-content">
+
+          <p>
+            Computer Society of India (CSI) was established under
+            the Department of Computer Science and Engineering on
+            <strong>6th October 2004.</strong>
+          </p>
+
+          <p>
+            The purposes of the society are scientific and educational,
+            directed towards the advancement of the theory and practice
+            of Computer Science, Computer Engineering and Technology,
+            Systems Science and Engineering, Information Processing
+            and related Arts and Sciences.
+          </p>
+
+          <p>
+            CSI is a professional body where professionals meet to
+            exchange views and information, learn and share ideas.
+            More than <strong>70% of the students and faculty of CSE</strong>
+            are members of CSI.
+          </p>
+
+          <p>
+            The activities of the chapter include seminars, workshops,
+            technical symposiums, certification courses and guest
+            lectures to keep faculty and students updated with the
+            latest developments in technology.
+          </p>
+
+          <p>
+            Every year, we conduct the national-level technical
+            symposium <strong>Convergence</strong>, helping students
+            become competent software professionals ready to face
+            challenges in the IT sector.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VISION / MISSION -->
+
+    <section class="vision-mission">
+
+      <div class="vm-grid">
+
+        <article class="vm-card">
+
+          <span class="vm-number">01</span>
+
+          <h2>Our <span>Vision</span></h2>
+
+          <p>
+            To foster academic and research excellence in the
+            foundational and advanced technologies of Computer
+            Science and Engineering, by cultivating a dynamic
+            and innovative learning environment.
+          </p>
+
+          <p>
+            Our goal is to inspire creativity, encourage critical
+            thinking, and drive innovation, equipping students
+            and researchers with the skills and knowledge needed
+            to address real-world challenges and contribute
+            meaningfully to technological advancements.
+          </p>
+
+        </article>
+
+
+        <article class="vm-card">
+
+          <span class="vm-number">02</span>
+
+          <h2>Our <span>Mission</span></h2>
+
+          <p>
+            To provide a dynamic, innovative, and flexible
+            curriculum which equips students with problem-driven
+            skills to strengthen their career prospects and
+            potential to pursue higher studies.
+          </p>
+
+          <p>
+            To foster inquisitive-driven research among students
+            and staff to reinforce domain knowledge and address
+            contemporary societal issues.
+          </p>
+
+          <p>
+            To inculcate ethical values, leadership qualities,
+            and professional behavior skills for improving
+            the living standards of people.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section class="achievements section">
+
+      <div class="section-top">
+
+        <div>
+
+          <div class="section-label">
+            <span>02</span>
+            RECOGNITION
+          </div>
+
+          <h2>
+            Our
+            <span>Achievements.</span>
+          </h2>
+
+        </div>
+
+        <p>
+          Milestones that reflect years of
+          commitment and excellence.
+        </p>
+
+      </div>
+
+
+      <div class="achievement-list">
+
+        {achievements.map((achievement, index) => (
+
+          <div class="achievement">
+
+            <div class="achievement-index">
+              {String(index + 1).padStart(2, "0")}
+            </div>
+
+            <div class="achievement-year">
+              {achievement.year}
+            </div>
+
+            <div class="achievement-title">
+              {achievement.title}
+            </div>
+
+            <div class="achievement-arrow">
+              ↗
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+      <div class="stat">
+        <strong>2000+</strong>
+        <span>Members</span>
+      </div>
+
+      <div class="stat">
+        <strong>200+</strong>
+        <span>Events</span>
+      </div>
+
+      <div class="stat">
+        <strong>400+</strong>
+        <span>Alumni Network</span>
+      </div>
+
+      <div class="stat">
+        <strong>25+</strong>
+        <span>Awards</span>
+      </div>
+
+    </section>
+
+
+    <!-- SOCIAL IMPACT -->
+
+    <section class="impact section">
+
+      <div class="section-label">
+        <span>03</span>
+        SOCIAL IMPACT
+      </div>
+
+      <div class="impact-heading">
+
+        <h2>
+          Technology
+          <span>with purpose.</span>
+        </h2>
+
+        <p>
+          Our work extends beyond the classroom. Through
+          community initiatives, CSI members use technology,
+          awareness and education to create meaningful social
+          impact.
+        </p>
+
+      </div>
+
+
+      <div class="initiative-grid">
+
+        {initiatives.map((initiative, index) => (
+
+          <article class="initiative-card">
+
+            <span>
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <h3>
+              {initiative}
+            </h3>
+
+          </article>
+
+        ))}
+
+      </div>
+
+    </section>
+
+
+    <!-- ADVISORY BOARD -->
+
+    <section class="advisory section">
+
+      <div class="section-label">
+        <span>04</span>
+        LEADERSHIP
+      </div>
+
+      <div class="advisory-heading">
+
+        <h2>
+          Advisory
+          <span>Board.</span>
+        </h2>
+
+        <p>
+          Experienced faculty members guiding the chapter
+          towards academic excellence, innovation and impact.
+        </p>
+
+      </div>
+
+
+      <div class="advisors">
+
+        <div class="advisor">
+          <span>01</span>
+          <strong>Dr. V. Baby</strong>
+        </div>
+
+        <div class="advisor">
+          <span>02</span>
+          <strong>Dr. C. Kiran Mai</strong>
+        </div>
+
+        <div class="advisor">
+          <span>03</span>
+          <strong>Dr. N. Sandeep Chaitanya</strong>
+        </div>
+
+        <div class="advisor">
+          <span>04</span>
+          <strong>Mr. SK Saddam Hussain</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta section">
+
+      <div class="cta-inner">
+
+        <div>
+
+          <div class="section-label">
+            <span>05</span>
+            BE PART OF IT
+          </div>
+
+          <h2>
+            Build.
+            <span>Learn.</span>
+            Lead.
+          </h2>
+
+          <p>
+            Join CSI VNRVJIET and become part of a community
+            that believes technology should create opportunities.
+          </p>
+
+        </div>
+
+        <a href="/join-us" class="cta-button">
+          Join CSI
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <div class="footer-logos">
+
+            <img
+              src="https://vnrvjietcsi.com/assets/VNRVJIET%20New%20Yellow%20and%20Black-bBQPsvV0.webp"
+              alt="VNRVJIET"
+            />
+
+            <img
+              src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+              alt="CSI"
+            />
+
+          </div>
+
+          <h3>CSI VNRVJIET</h3>
+
+          <p>
+            Computer Society of India - VNRVJIET Student Chapter
+            is committed to the advancement of theory and practice
+            of Computer Engineering and Technology Systems.
+          </p>
+
+          <div class="socials">
+
+            <a
+              href="https://www.instagram.com/csi_vnrvjiet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/csi-vnrvjiet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Quick Links</h4>
+
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/magazines">Magazines</a>
+          <a href="/team">Team</a>
+          <a href="/gallery">Gallery</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Contact Us</h4>
+
+          <a
+            href="https://maps.app.goo.gl/S7DcmD3pR1wU3ywq9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VNRVJIET, Hyderabad
+          </a>
+
+          <a href="mailto:csisbl@vnrvjiet.in">
+            csisbl@vnrvjiet.in
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © {new Date().getFullYear()} CSI VNRVJIET
+        </span>
+
+        <span>
+          Built with purpose.
+        </span>
+
+      </div>
+
+    </footer>
+
+  </body>
+</html>
+

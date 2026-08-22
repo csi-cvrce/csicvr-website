@@ -1,0 +1,606 @@
+---
+import "../styles/global.css";
+
+const benefits = [
+  {
+    number: "01",
+    title: "Exclusive Events",
+    description:
+      "Access workshops, hackathons, conferences, and technical sessions designed to expand your knowledge.",
+  },
+  {
+    number: "02",
+    title: "Networking Opportunities",
+    description:
+      "Connect with professionals, mentors, alumni, and fellow students from the technology community.",
+  },
+  {
+    number: "03",
+    title: "Skill Development",
+    description:
+      "Gain hands-on experience through real projects, workshops, competitions, and collaborative learning.",
+  },
+  {
+    number: "04",
+    title: "Career Growth",
+    description:
+      "Leverage CSI's industry connections to discover internships, opportunities, and career guidance.",
+  },
+  {
+    number: "05",
+    title: "Community Outreach",
+    description:
+      "Participate in initiatives that promote technology education, digital literacy, and social awareness.",
+  },
+  {
+    number: "06",
+    title: "Professional Recognition",
+    description:
+      "Earn certificates, awards, and experiences that strengthen your resume and professional profile.",
+  },
+];
+
+const activities = [
+  {
+    number: "01",
+    title: "Technical Workshops",
+    description: "Regular hands-on sessions covering emerging technologies.",
+    items: ["Web Development", "Django", "Git & GitHub"],
+  },
+  {
+    number: "02",
+    title: "Guest Lectures",
+    description: "Industry experts sharing real-world experiences.",
+    items: ["Tech Talks", "Career Guidance", "Industry Trends"],
+  },
+  {
+    number: "03",
+    title: "Competitions",
+    description: "Challenging events where students showcase their skills.",
+    items: ["Hackathons", "Coding Contests", "Project Exhibitions"],
+  },
+  {
+    number: "04",
+    title: "Skill Development",
+    description: "Collaborative environments designed to build practical skills.",
+    items: ["Technical Bootcamps", "Designing", "Video Editing"],
+  },
+];
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Join CSI | CSI VNRVJIET</title>
+
+  <meta
+    name="description"
+    content="Join the CSI VNRVJIET Student Chapter and develop your technical skills, network with professionals and participate in workshops, hackathons and competitions."
+  />
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar">
+
+  <div class="nav-container">
+
+    <a href="/" class="brand">
+
+      <img
+        src="https://vnrvjietcsi.com/assets/VNRVJIET%20New%20Yellow%20and%20Black-bBQPsvV0.webp"
+        alt="VNRVJIET Logo"
+        class="vnr-logo"
+      />
+
+      <span class="divider"></span>
+
+      <img
+        src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+        alt="CSI Logo"
+        class="csi-logo"
+      />
+
+    </a>
+
+    <nav class="desktop-nav">
+
+      <a href="/">Home</a>
+
+      <a href="/aboutus">About Us</a>
+
+      <a href="/events">Events</a>
+
+      <a href="/gallery">Gallery</a>
+
+      <a href="/team">Team</a>
+
+      <a href="/vjh">VJH 2k25</a>
+
+      <a href="/magazines">Magazines</a>
+
+    </nav>
+
+    <a
+      href="/join-us"
+      class="nav-button active-button"
+    >
+      Join Us
+    </a>
+
+    <button class="mobile-menu">
+      ☰
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="join-hero">
+
+  <div class="join-hero-content">
+
+    <div class="hero-badge">
+      <span></span>
+      CSI VNRVJIET
+    </div>
+
+    <h1>
+      Join the
+      <span>Chapter.</span>
+    </h1>
+
+    <p>
+      Be part of a community where technology,
+      creativity and collaboration come together.
+      Learn from experts, build real things and
+      shape your future.
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSez6QhrfNWL0JKAjW1pKxbp8wrpKYXe-bxtFjjm9zMGRzUJWA/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="primary-button"
+      >
+        Become a Member
+        <span>↗</span>
+      </a>
+
+      <a
+        href="#benefits"
+        class="secondary-button"
+      >
+        Explore Benefits
+        <span>↓</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="join-hero-mark">
+
+    <div class="circle circle-one"></div>
+
+    <div class="circle circle-two"></div>
+
+    <div class="circle-text">
+      CSI<br />
+      VNRVJIET
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="join-stats">
+
+  <div class="join-stat">
+
+    <strong>2000<span>+</span></strong>
+
+    <p>Members</p>
+
+  </div>
+
+
+  <div class="join-stat">
+
+    <strong>200<span>+</span></strong>
+
+    <p>Events</p>
+
+  </div>
+
+
+  <div class="join-stat">
+
+    <strong>400<span>+</span></strong>
+
+    <p>Alumni Network</p>
+
+  </div>
+
+
+  <div class="join-stat">
+
+    <strong>25<span>+</span></strong>
+
+    <p>Awards</p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section
+  class="join-section"
+  id="benefits"
+>
+
+  <div class="section-label">
+
+    <span>01</span>
+
+    WHY JOIN CSI
+
+  </div>
+
+
+  <div class="join-section-heading">
+
+    <h2>
+      More than a
+      <span>membership.</span>
+    </h2>
+
+    <p>
+      CSI gives you the environment, people and
+      opportunities to turn curiosity into capability.
+    </p>
+
+  </div>
+
+
+  <div class="benefit-grid">
+
+    {benefits.map((benefit) => (
+
+      <article class="benefit-card">
+
+        <div class="benefit-number">
+          {benefit.number}
+        </div>
+
+        <div class="benefit-content">
+
+          <h3>
+            {benefit.title}
+          </h3>
+
+          <p>
+            {benefit.description}
+          </p>
+
+        </div>
+
+        <div class="benefit-arrow">
+          ↗
+        </div>
+
+      </article>
+
+    ))}
+
+  </div>
+
+</section>
+
+
+<!-- ================= ACTIVITIES ================= -->
+
+<section class="activities-section">
+
+  <div class="section-label">
+
+    <span>02</span>
+
+    WHAT WE DO
+
+  </div>
+
+
+  <div class="join-section-heading">
+
+    <h2>
+      Learn.
+      <span>Build. Compete.</span>
+    </h2>
+
+    <p>
+      Get involved in activities that push you
+      beyond the classroom and into real-world
+      technology.
+    </p>
+
+  </div>
+
+
+  <div class="activities-grid">
+
+    {activities.map((activity) => (
+
+      <article class="activity-card">
+
+        <div class="activity-top">
+
+          <span>
+            {activity.number}
+          </span>
+
+          <span class="activity-icon">
+            ↗
+          </span>
+
+        </div>
+
+        <h3>
+          {activity.title}
+        </h3>
+
+        <p>
+          {activity.description}
+        </p>
+
+        <ul>
+
+          {activity.items.map((item) => (
+
+            <li>
+              <span>+</span>
+              {item}
+            </li>
+
+          ))}
+
+        </ul>
+
+      </article>
+
+    ))}
+
+  </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="membership-cta">
+
+  <div class="cta-content">
+
+    <div class="hero-badge">
+      <span></span>
+      YOUR NEXT CHAPTER
+    </div>
+
+    <h2>
+      Don't just watch
+      <span>technology evolve.</span>
+    </h2>
+
+    <p>
+      Learn it. Build it. Share it.
+      Become part of CSI VNRVJIET.
+    </p>
+
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSez6QhrfNWL0JKAjW1pKxbp8wrpKYXe-bxtFjjm9zMGRzUJWA/viewform"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="primary-button large"
+    >
+      Become a Member
+      <span>↗</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section">
+
+  <div class="section-label">
+
+    <span>03</span>
+
+    CONTACT
+
+  </div>
+
+
+  <div class="contact-grid">
+
+    <div>
+
+      <h2>
+        Have
+        <span>questions?</span>
+      </h2>
+
+      <p>
+        Reach out to the CSI VNRVJIET Student Chapter
+        for membership and chapter-related queries.
+      </p>
+
+    </div>
+
+
+    <div class="contact-details">
+
+      <div class="contact-item">
+
+        <span>Email</span>
+
+        <a href="mailto:csisbl@vnrvjiet.in">
+          csisbl@vnrvjiet.in
+        </a>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <span>Location</span>
+
+        <p>
+          Department of Computer Science,<br />
+          VNR Vignana Jyothi Institute of Engineering
+          and Technology,<br />
+          Pragathi Nagar, Nizampet,<br />
+          Hyderabad, Telangana – 500090
+        </p>
+
+      </div>
+
+
+      <a
+        href="https://maps.app.goo.gl/S7DcmD3pR1wU3ywq9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="map-button"
+      >
+        Open in Google Maps ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-main">
+
+    <div class="footer-brand">
+
+      <div class="footer-logos">
+
+        <img
+          src="https://vnrvjietcsi.com/assets/VNRVJIET%20New%20Yellow%20and%20Black-bBQPsvV0.webp"
+          alt="VNRVJIET"
+        />
+
+        <img
+          src="https://vnrvjietcsi.com/assets/csilogo-BPqX6aZg.webp"
+          alt="CSI"
+        />
+
+      </div>
+
+      <h3>CSI VNRVJIET</h3>
+
+      <p>
+        Computer Society of India - VNRVJIET Student Chapter
+        is committed to the advancement of theory and practice
+        of Computer Engineering and Technology Systems.
+      </p>
+
+      <div class="socials">
+
+        <a
+          href="https://www.instagram.com/csi_vnrvjiet/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/csi-vnrvjiet/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Quick Links</h4>
+
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <a href="/events">Events</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/team">Team</a>
+      <a href="/join-us">Join Us</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Contact Us</h4>
+
+      <a href="mailto:csisbl@vnrvjiet.in">
+        csisbl@vnrvjiet.in
+      </a>
+
+      <a
+        href="https://maps.app.goo.gl/S7DcmD3pR1wU3ywq9"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VNRVJIET, Hyderabad
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © {new Date().getFullYear()} CSI VNRVJIET
+    </span>
+
+    <span>
+      Built with purpose.
+    </span>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
