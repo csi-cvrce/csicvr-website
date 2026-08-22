@@ -39,41 +39,109 @@ const faculty = [
   },
 ];
 
-/*
-  Replace these with your actual student organisers.
-  Add/remove objects as required.
-*/
 const studentOrganisers = [
   {
-    name: "Arjun Reddy",
-    role: "Chairperson",
+    name: "Rutwika Goparaju",
+    role: "Chairman",
+    details: "23B81A7341 | ET | 3rd Year",
     image: "/images/team/PROFILE%20.jpg",
   },
   {
-    name: "Meera Nair",
-    role: "Vice Chairperson",
+    name: "K. Abhinay Reddy",
+    role: "Vice Chairman",
+    details: "23B81A05R7 | CSE | 3rd Year",
     image: "/images/team/PROFILE%20.jpg",
   },
   {
-    name: "Karthik Varma",
+    name: "Teja Sri Vaitla",
     role: "Secretary",
+    details: "24B81A1257 | IT | 2nd Year",
     image: "/images/team/PROFILE%20.jpg",
   },
   {
-    name: "Ananya Rao",
-    role: "Technical Lead",
+    name: "Sai Pujitha",
+    role: "Joint Secretary",
+    details: "24B81A0539 | CSE | 2nd Year",
     image: "/images/team/PROFILE%20.jpg",
   },
   {
-    name: "Rohan Desai",
-    role: "Events Lead",
+    name: "B. Yashwanth Yadav",
+    role: "Treasurer",
+    details: "24B81A6265 | ET | 2nd Year",
     image: "/images/team/PROFILE%20.jpg",
   },
   {
-    name: "Ishita Menon",
-    role: "Creative Lead",
+    name: "D. Harsha Vardhan",
+    role: "Photography Lead",
+    details: "24B81A67M3 | ET | 2nd Year",
     image: "/images/team/PROFILE%20.jpg",
   },
+  {
+    name: "M. Dileep Krishna",
+    role: "Publicity & Social Media Lead",
+    details: "23B81A0576 | CSE | 3rd Year",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "Vellanki Srikar Reddy",
+    role: "Publicity & Social Media Member",
+    details: "24B81A0551 | CSE | 2nd Year",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "K. Srija",
+    role: "Graphic & Newsletter Designer Lead",
+    details: "23B81A0552 | CSE | 3rd Year",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "T. Srija Reddy",
+    role: "Graphic & Newsletter Designer Member",
+    details: "24B81A05Q5 | CSE | 2nd Year",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+  {
+    name: "P. Sanjana Reddy",
+    role: "Graphic & Newsletter Designer Member",
+    details: "24B81A05P4 | CSE | 2nd Year",
+    image: "/images/team/PROFILE%20.jpg",
+  },
+];
+
+const executiveMembers = [
+  ["Surishetty Harivallabha Sai", "23B81A0577", "CSE", "3rd Year"],
+  ["Pawar Sudharshan", "23B81A05BQ", "CSE", "3rd Year"],
+  ["Tanushka", "24B81A05KF", "CSE", "2nd Year"],
+  ["Vavilla Akshitha Reddy", "24B81A05HK", "CSE", "2nd Year"],
+  ["Kanchi Praneetha", "24B81A66N4", "ET", "2nd Year"],
+  ["Akshaya Thatikonda", "24B81A6767", "ET", "2nd Year"],
+  ["Bonala Sharmeen", "24B81DA902", "M.Tech", "2nd Year"],
+  ["S Safrin Fathima", "24B81DA911", "M.Tech", "2nd Year"],
+  ["Kammampaty Vamshi", "25B81DA908", "M.Tech", "1st Year"],
+  ["Kondoju Srividya", "25B81DA909", "M.Tech", "1st Year"],
+].map(([name, rollNumber, department, year]) => ({
+  name,
+  role: "Executive Member",
+  details: `${rollNumber} | ${department} | ${year}`,
+  image: "/images/team/PROFILE%20.jpg",
+}));
+
+const advisoryCommittee = [
+  ["Nikhitha Madhagoni", "22B81A05AK", "S50242200390233"],
+  ["Shaik Sofiya", "22B81A1243", "S50242200390359"],
+  ["Vuppala Ujwala", "22B81A12C2", "S50242200390374"],
+].map(([name, rollNumber, membershipId]) => ({
+  name,
+  details: `${rollNumber} | Membership ID: ${membershipId}`,
+  image: "/images/team/PROFILE%20.jpg",
+}));
+
+const electionOfficers = [
+  "Dr. V. Dattatreya",
+  "Dr. M. Sridevi",
+  "Dr. P. Madhavi",
+  "Dr. Swathi Agarwal",
+  "Mrs. A. Geetha",
 ];
 ---
 
@@ -236,19 +304,19 @@ const studentOrganisers = [
 
       <div class="section-label">
         <span>02</span>
-        STUDENT ORGANISERS
+        STUDENT LEADERSHIP
       </div>
 
       <div class="section-heading">
 
         <h2>
-          Driven by
+          Led by
           <span>students.</span>
         </h2>
 
         <p>
-          The student leadership team responsible for
-          building, organising and growing the CSI community.
+          The student leadership team responsible for building,
+          organising and growing the CSI community.
         </p>
 
       </div>
@@ -284,12 +352,137 @@ const studentOrganisers = [
                 {person.role}
               </span>
 
+              <small>
+                {person.details}
+              </small>
+
             </div>
 
           </article>
 
         ))}
 
+      </div>
+
+    </section>
+
+
+    <!-- EXECUTIVE MEMBERS -->
+
+    <section class="team-section executive-section">
+
+      <div class="section-label">
+        <span>03</span>
+        EXECUTIVE MEMBERS
+      </div>
+
+      <div class="section-heading">
+
+        <h2>
+          The wider
+          <span>team.</span>
+        </h2>
+
+        <p>
+          Executive members supporting the chapter's activities,
+          events and community initiatives.
+        </p>
+
+      </div>
+
+      <div class="student-grid">
+
+        {executiveMembers.map((person) => (
+
+          <article class="student-card">
+
+            <div class="student-image">
+
+              <img
+                src={person.image}
+                alt={person.name}
+                loading="lazy"
+              />
+
+              <div class="student-index">
+                +
+              </div>
+
+            </div>
+
+            <div class="student-info">
+
+              <h3>{person.name}</h3>
+              <span>{person.role}</span>
+              <small>{person.details}</small>
+
+            </div>
+
+          </article>
+
+        ))}
+
+      </div>
+
+    </section>
+
+
+    <!-- ADVISORY COMMITTEE -->
+
+    <section class="team-section advisory-section">
+
+      <div class="section-label">
+        <span>04</span>
+        ADVISORY COMMITTEE
+      </div>
+
+      <div class="section-heading">
+
+        <h2>
+          Guided by
+          <span>advisors.</span>
+        </h2>
+
+        <p>
+          Members of the advisory committee supporting the CSI chapter.
+        </p>
+
+      </div>
+
+      <div class="advisory-grid">
+        {advisoryCommittee.map((person) => (
+          <article class="advisory-card">
+            <div class="advisory-image">
+              <img src={person.image} alt={person.name} loading="lazy" />
+            </div>
+
+            <div class="advisory-info">
+              <h3>{person.name}</h3>
+              <p>{person.details}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </section>
+
+
+    <!-- ELECTION OFFICERS -->
+
+    <section class="team-section officers-section">
+
+      <div class="section-label">
+        <span>05</span>
+        ELECTION OFFICERS - CSI-SBCS
+      </div>
+
+      <div class="officer-list">
+        {electionOfficers.map((officer, index) => (
+          <div class="officer-item">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{officer}</strong>
+          </div>
+        ))}
       </div>
 
     </section>
