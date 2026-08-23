@@ -18,6 +18,8 @@ import sanjanaReddy from "../assets/team/Sanjana Reddy Pakker.webp";
 import sharmeenBonala from "../assets/team/Sharmeen Bonala.webp";
 import srikarReddy from "../assets/team/Srikar Reddy.webp";
 import tanushkaRathod from "../assets/team/Tanushka Rathod.webp";
+import sofia from "../assets/team/sofia.webp";
+import ujwala from "../assets/team/ujwala.webp";
 import thipparthiSrijareddy from "../assets/team/Thipparthi Srijareddy.webp";
 import vaitlaTejasri from "../assets/team/Vaitla Tejasri.webp";
 import vallabha from "../assets/team/vallabha.webp";
@@ -161,7 +163,10 @@ const advisoryCommittee = [
 ].map(([name, rollNumber, membershipId]) => ({
   name,
   details: `${rollNumber} | Membership ID: ${membershipId}`,
-  image: "/images/team/PROFILE%20.jpg",
+  image: {
+    "Shaik Sofiya": sofia,
+    "Vuppala Ujwala": ujwala,
+  }[name] ?? "/images/team/PROFILE%20.jpg",
 }));
 
 const electionOfficers = [
@@ -498,7 +503,24 @@ const electionOfficers = [
         {advisoryCommittee.map((person) => (
           <article class="advisory-card">
             <div class="advisory-image">
-              <img src={person.image} alt={person.name} loading="lazy" />
+              {typeof person.image === "string" ? (
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={600}
+                  height={800}
+                  format="webp"
+                  quality={75}
+                  loading="lazy"
+                />
+              )}
             </div>
 
             <div class="advisory-info">
