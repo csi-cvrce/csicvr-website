@@ -1,0 +1,387 @@
+---
+import "../../styles/global.css";
+
+const eventCatalog = {
+  "cyber-security-and-ethical-hacking": {
+    title: "Cyber Security and Ethical Hacking",
+    date: "25-01-2023",
+    year: "2023-2024",
+    type: "Workshop",
+    images: [
+      "/images/events/2023/Cyber%20Security%20and%20Ethical%20Hacking/IMG_0761.PNG",
+      "/images/events/2023/Cyber%20Security%20and%20Ethical%20Hacking/IMG_0762.PNG",
+      "/images/events/2023/Cyber%20Security%20and%20Ethical%20Hacking/IMG_0763.PNG",
+    ],
+  },
+  "image-data-analysis-using-python": {
+    title: "Image Data Analysis using Python",
+    date: "02-03-2023 to 03-03-2023",
+    year: "2023-2024",
+    type: "Workshop",
+    images: [
+      "/images/events/2023/Image%20Data%20Analysis%20using%20Python/IMG_0766.PNG",
+      "/images/events/2023/Image%20Data%20Analysis%20using%20Python/IMG_0767.PNG",
+      "/images/events/2023/Image%20Data%20Analysis%20using%20Python/IMG_0768.PNG",
+      "/images/events/2023/Image%20Data%20Analysis%20using%20Python/IMG_0769.PNG",
+    ],
+  },
+  "59th-csi-foundation-day": {
+    title: "59th CSI Foundation Day",
+    date: "06-03-2023",
+    year: "2023-2024",
+    type: "Ceremonial/Cultural Events",
+    images: [
+      "/images/events/2023/59th%20CSI%20Foundation%20Day/IMG_0770.PNG",
+      "/images/events/2023/59th%20CSI%20Foundation%20Day/IMG_0771.PNG",
+      "/images/events/2023/59th%20CSI%20Foundation%20Day/IMG_0772.PNG",
+      "/images/events/2023/59th%20CSI%20Foundation%20Day/IMG_0773.PNG",
+    ],
+  },
+  "9th-csi-inaugural-ceremony": {
+    title: "09th CSI Inaugural Ceremony",
+    date: "24-11-2023",
+    year: "2023-2024",
+    type: "Ceremonial/Cultural Events",
+    images: [
+      "/images/events/2023/9th%20CSI%20Inaugural%20Ceremony/IMG_0774.PNG",
+      "/images/events/2023/9th%20CSI%20Inaugural%20Ceremony/IMG_0775.PNG",
+      "/images/events/2023/9th%20CSI%20Inaugural%20Ceremony/IMG_0776.PNG",
+      "/images/events/2023/9th%20CSI%20Inaugural%20Ceremony/IMG_0777.PNG",
+    ],
+  },
+  "foot-printing-and-ethical-hacking": {
+    title: "Foot Printing and Ethical Hacking",
+    date: "08-12-2023 to 09-12-2023",
+    year: "2023-2024",
+    type: "Workshop",
+    images: [
+      "/images/events/2023/Foot%20Printing%20and%20Ethical%20Hacking/IMG_0778.PNG",
+      "/images/events/2023/Foot%20Printing%20and%20Ethical%20Hacking/IMG_0779.PNG",
+      "/images/events/2023/Foot%20Printing%20and%20Ethical%20Hacking/IMG_0780.PNG",
+      "/images/events/2023/Foot%20Printing%20and%20Ethical%20Hacking/IMG_0781.PNG",
+    ],
+  },
+  "fundamentals-of-image-processing": {
+    title: "Fundamentals of Image Processing",
+    date: "22-12-2023 to 23-12-2023",
+    year: "2023-2024",
+    type: "Workshop",
+    images: [
+      "/images/events/2023/Fundamentals%20of%20Image%20Processing/IMG_0782.PNG",
+    ],
+  },
+  "60th-csi-foundation-day": {
+    title: "60th CSI Foundation Day",
+    date: "06-03-2024",
+    year: "2024-2025",
+    type: "Ceremonial/Cultural Events",
+    images: [
+      "/images/events/2024/60th%20CSI%20Foundation%20Day/IMG_0783.PNG",
+    ],
+  },
+  hackfusion: {
+    title: "HackFusion",
+    date: "21-03-2024",
+    year: "2024-2025",
+    type: "Ciencia 2k24",
+    images: [
+      "/images/events/2024/Ciencia2k24/IMG_0784.PNG",
+    ],
+  },
+  "cloud-security-workshop": {
+    title: "Cloud Security Workshop",
+    date: "09-08-2024 to 10-08-2024",
+    year: "2024-2025",
+    type: "Workshop",
+    images: [
+      "/images/events/2024/Cloud%20Security/IMG_0785.PNG",
+      "/images/events/2024/Cloud%20Security/IMG_0786.PNG",
+      "/images/events/2024/Cloud%20Security/IMG_0787.PNG",
+      "/images/events/2024/Cloud%20Security/IMG_0788.PNG",
+    ],
+  },
+  "10th-csi-inaugural-ceremony": {
+    title: "10th CSI Inaugural Ceremony",
+    date: "04-10-2024",
+    year: "2024-2025",
+    type: "Ceremonial/Cultural Events",
+    images: [
+      "/images/events/2024/10th%20CSI%20Inaugural%20Ceremony/IMG_0789.PNG",
+    ],
+  },
+  "code-your-way-to-data-mastery-workshop": {
+    title: "Code Your Way To Data Mastery Workshop",
+    date: "09-01-2025 to 10-01-2025",
+    year: "2025-2026",
+    type: "Workshop",
+    images: [
+      "/images/events/2025/Code%20Your%20Way%20to%20Data%20Mastery/IMG_0790.PNG",
+      "/images/events/2025/Code%20Your%20Way%20to%20Data%20Mastery/IMG_0791.PNG",
+      "/images/events/2025/Code%20Your%20Way%20to%20Data%20Mastery/IMG_0792.PNG",
+      "/images/events/2025/Code%20Your%20Way%20to%20Data%20Mastery/IMG_0793.PNG",
+    ],
+  },
+  quiz: {
+    title: "Quiz",
+    date: "20-01-2025",
+    year: "2025-2026",
+    type: "Quizzes",
+    images: [
+      "/images/events/2025/Quiz/IMG_0795.PNG",
+      "/images/events/2025/Quiz/IMG_0797.PNG",
+      "/images/events/2025/Quiz/IMG_0798.PNG",
+    ],
+  },
+  "cyber-defence-and-threat-intelligence-workshop": {
+    title: "Cyber Defence and Threat Intelligence Workshop",
+    date: "24-09-2025 to 25-09-2025",
+    year: "2025-2026",
+    type: "Workshop",
+    images: [
+      "/images/events/2025/Cyber%20Defence%20and%20Threat%20Intelligence/IMG_0759.PNG",
+      "/images/events/2025/Cyber%20Defence%20and%20Threat%20Intelligence/IMG_0760.PNG",
+      "/images/events/2025/Cyber%20Defence%20and%20Threat%20Intelligence/IMG_0765.PNG",
+      "/images/events/2025/Cyber%20Defence%20and%20Threat%20Intelligence/IMG_0799.PNG",
+    ],
+  },
+  "11th-csi-inaugural-ceremony": {
+    title: "11th CSI Inaugural Ceremony",
+    date: "29-01-2026",
+    year: "2026-2027",
+    type: "Ceremonial/Cultural Events",
+    images: [
+      "/images/events/2026/11th%20CSI%20Inaugural%20Ceremony/IMG_0800.PNG",
+      "/images/events/2026/11th%20CSI%20Inaugural%20Ceremony/IMG_0801.PNG",
+      "/images/events/2026/11th%20CSI%20Inaugural%20Ceremony/IMG_0802.PNG",
+      "/images/events/2026/11th%20CSI%20Inaugural%20Ceremony/IMG_0803.PNG",
+      "/images/events/2026/11th%20CSI%20Inaugural%20Ceremony/IMG_0812.PNG",
+    ],
+  },
+  ciencia2k26: {
+    title: "Ciencia 2k26",
+    date: "13-03-2026",
+    year: "2026-2027",
+    type: "Ciencia 2k26",
+    images: [
+      "/images/events/2026/Ciencia2k26/IMG_0804.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0805.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0806.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0807.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0808.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0810.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0811.PNG",
+    ],
+  },
+  "puzzle-rush": {
+    title: "Puzzle Rush",
+    date: "13-03-2026",
+    year: "2026-2027",
+    type: "Ciencia 2k26",
+    images: [
+      "/images/events/2026/Ciencia2k26/IMG_0804.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0805.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0806.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0807.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0808.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0810.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0811.PNG",
+    ],
+  },
+  tictionary: {
+    title: "Tictionary",
+    date: "13-03-2026",
+    year: "2026-2027",
+    type: "Ciencia 2k26",
+    images: [
+      "/images/events/2026/Ciencia2k26/IMG_0804.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0805.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0806.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0807.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0808.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0810.PNG",
+      "/images/events/2026/Ciencia2k26/IMG_0811.PNG",
+    ],
+  },
+  "csi-guru-purnima-day": {
+    title: "CSI Guru Purnima Day",
+    date: "29-07-2026",
+    year: "2026-2027",
+    type: "Ceremonial/Cultural Events",
+    images: [
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_0813.PNG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3070.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3083.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3085.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3095.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3097.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3103.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3107.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3114.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3118.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3119.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3120.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3123.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3124.jpg",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3128.jpg",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3130.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3132.JPG",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3133.jpg",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3135.jpg",
+      "/images/events/2026/CSI%20Guru%20Purnima%20Day/IMG_3141.JPG",
+    ],
+  },
+};
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "cyber-security-and-ethical-hacking" } },
+    { params: { slug: "image-data-analysis-using-python" } },
+    { params: { slug: "59th-csi-foundation-day" } },
+    { params: { slug: "9th-csi-inaugural-ceremony" } },
+    { params: { slug: "foot-printing-and-ethical-hacking" } },
+    { params: { slug: "fundamentals-of-image-processing" } },
+    { params: { slug: "60th-csi-foundation-day" } },
+    { params: { slug: "hackfusion" } },
+    { params: { slug: "cloud-security-workshop" } },
+    { params: { slug: "10th-csi-inaugural-ceremony" } },
+    { params: { slug: "code-your-way-to-data-mastery-workshop" } },
+    { params: { slug: "quiz" } },
+    { params: { slug: "cyber-defence-and-threat-intelligence-workshop" } },
+    { params: { slug: "11th-csi-inaugural-ceremony" } },
+    { params: { slug: "ciencia2k26" } },
+    { params: { slug: "puzzle-rush" } },
+    { params: { slug: "tictionary" } },
+    { params: { slug: "csi-guru-purnima-day" } },
+  ];
+}
+
+const slug = Astro.params?.slug;
+const event = slug ? eventCatalog[slug] : null;
+
+if (!event) {
+  throw new Error("Event not found");
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{event.title} | CSI CVRCE</title>
+    <meta
+      name="description"
+      content={`Gallery for ${event.title} at CSI CVRCE.`}
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="/" class="brand">
+          <img src="/images/cvrlogo.png" alt="CVR College of Engineering" class="cvr-logo" />
+          <span class="divider"></span>
+          <img src="/images/csicvrlogo.png" alt="CSI Logo" class="csi-logo" />
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events" class="active-nav">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+        </nav>
+
+        <a href="/join-us" class="nav-button">Join Us</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="gallery-hero">
+        <div class="hero-badge">
+          <span></span>
+          CSI CVRCE
+        </div>
+
+        <h1>
+          {event.title}
+          <span>Gallery.</span>
+        </h1>
+
+        <p>
+          {event.date} · {event.year} · {event.type}
+        </p>
+      </section>
+
+      <section class="gallery-section">
+        <div class="gallery-grid">
+          {event.images.map((image, index) => (
+            <button
+              class={`gallery-card ${index === 0 ? "gallery-featured" : ""}`}
+              data-image={image}
+              data-title={event.title}
+              aria-label={`Open ${event.title} image ${index + 1}`}
+            >
+              <div class="gallery-image">
+                <img
+                  src={image}
+                  alt={`${event.title} image ${index + 1}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                />
+                <div class="gallery-overlay">
+                  <span class="view-icon">↗</span>
+                  <div>
+                    <span class="gallery-number">{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{event.title}</h3>
+                    <p>{event.date}</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close image">×</button>
+      <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="" />
+      </div>
+    </div>
+
+    <script>
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const closeButton = document.getElementById('lightbox-close');
+      const cards = document.querySelectorAll('.gallery-card');
+
+      cards.forEach((card) => {
+        card.addEventListener('click', () => {
+          const image = card.getAttribute('data-image');
+          const title = card.getAttribute('data-title');
+
+          if (!lightbox || !lightboxImage || !image) return;
+
+          lightboxImage.src = image;
+          lightboxImage.alt = title || 'Event image';
+          lightbox.classList.add('is-open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      closeButton?.addEventListener('click', () => {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+      });
+
+      lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          lightbox.classList.remove('is-open');
+          lightbox.setAttribute('aria-hidden', 'true');
+        }
+      });
+    </script>
+  </body>
+</html>

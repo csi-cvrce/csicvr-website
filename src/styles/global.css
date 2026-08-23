@@ -1831,9 +1831,60 @@ footer {
 }
 
 .event-arrow {
+  min-height: 42px;
+
+  padding: 0 12px 0 15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid rgba(245, 197, 24, 0.55);
+
+  background: rgba(245, 197, 24, 0.08);
+
   color: var(--yellow);
 
-  font-size: 17px;
+  font-size: 11px;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.event-arrow strong {
+  font-size: 26px;
+
+  line-height: 1;
+}
+
+a.event-arrow:hover,
+a.event-arrow:focus-visible {
+  background: var(--yellow);
+
+  border-color: var(--yellow);
+
+  color: #080808;
+
+  transform: translateY(-2px);
+}
+
+a.event-arrow:focus-visible {
+  outline: 2px solid #fff;
+
+  outline-offset: 3px;
 }
 
 
