@@ -539,6 +539,13 @@ a {
   line-height: 0.5;
 }
 
+.quote-mark-end {
+  margin-top: -10px;
+  margin-bottom: 25px;
+  width: fit-content;
+  margin-left: auto;
+}
+
 blockquote {
   margin: 35px 0;
 
