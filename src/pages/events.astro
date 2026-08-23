@@ -504,7 +504,7 @@ const events = [
 
           {event.image ? (
             <img
-              src={event.image}
+              src={event.image.src}
               alt={event.title}
               loading={index < 6 ? "eager" : "lazy"}
               decoding="async"
