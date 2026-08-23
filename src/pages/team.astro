@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import "../styles/global.css";
 
+import Rutwika from "../assets/team/Rutwika.webp";
 import abhinayReddy from "../assets/team/Abhinay Reddy.webp";
 import akshayaThatikonda from "../assets/team/Akshaya Thatikonda.webp";
 import akshithaReddy from "../assets/team/Akshitha Reddy.webp";
@@ -10,6 +11,7 @@ import dileepKrishna from "../assets/team/Dileep Krishna.webp";
 import harshaDusanapudi from "../assets/team/Harsha Dusanapudi.webp";
 import kasarlaSrija from "../assets/team/Kasarla Srija.webp";
 import kondojuSrividya from "../assets/team/Kondoju Srividya.webp";
+import nikhithaMadhagoni from "../assets/team/nikitha.webp";
 import pawarSudharshan from "../assets/team/PAWAR SUDHARSHAN.webp";
 import praneethaKanchi from "../assets/team/Praneetha Kanchi.webp";
 import safrin from "../assets/team/Safrin.webp";
@@ -30,31 +32,31 @@ const faculty = [
     name: "Prof. L.C. Siva Reddy",
     role: "Prof. & Vice Principal",
     department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE%20.jpg",
+    image: "/images/team/PROFILE.jpg",
   },
   {
     name: "Dr. A. Vani Vathsala",
     role: "Prof. & Head of the CSE Dept.",
     department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE%20.jpg",
+    image: "/images/team/PROFILE.jpg",
   },
   {
     name: "Dr. C. Ramesh, M.Tech., Ph.D.",
     role: "Associate Dean, Student Affairs",
     department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE%20.jpg",
+    image: "/images/team/PROFILE.jpg",
   },
   {
     name: "Dr. S. Suguna Mallika, M.Tech., Ph.D.",
     role: "Faculty Coordinator",
     department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE%20.jpg",
+    image: "/images/team/PROFILE.jpg",
   },
   {
     name: "Dr. M. Sridevi, M.Tech., Ph.D.",
     role: "Faculty Coordinator",
     department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE%20.jpg",
+    image: "/images/team/PROFILE.jpg",
   },
 ];
 
@@ -63,7 +65,7 @@ const studentOrganisers = [
     name: "Rutwika Goparaju",
     role: "Chairman",
     details: "23B81A7341 | ET | 4th Year",
-    image: "/images/team/PROFILE%20.jpg",
+    image: Rutwika,
   },
   {
     name: "K. Abhinay Reddy",
@@ -164,6 +166,7 @@ const advisoryCommittee = [
   name,
   details: `${rollNumber} | Membership ID: ${membershipId}`,
   image: {
+    "Nikhitha Madhagoni": nikhithaMadhagoni,
     "Shaik Sofiya": sofia,
     "Vuppala Ujwala": ujwala,
   }[name] ?? "/images/team/PROFILE%20.jpg",
