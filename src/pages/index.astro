@@ -85,8 +85,30 @@ const cards = [
         <button class="mobile-menu" aria-label="Open menu">
           ☰
         </button>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          {navLinks.map((link) => (
+            <a href={link.href}>{link.name}</a>
+          ))}
+          <a href="/join-us">Join Us</a>
+        </nav>
       </div>
     </header>
+
+    <script>
+      const mobileMenu = document.querySelector<HTMLButtonElement>('.mobile-menu');
+      const mobileNav = document.querySelector<HTMLElement>('.mobile-nav');
+
+      mobileMenu?.addEventListener('click', () => {
+        const isOpen = mobileNav?.classList.toggle('is-open') ?? false;
+        mobileMenu.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      });
+
+      mobileNav?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => mobileNav.classList.remove('is-open'));
+      });
+    </script>
 
 
     <!-- HERO -->

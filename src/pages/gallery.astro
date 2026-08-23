@@ -67,8 +67,36 @@ const gallery = [
           Join Us
         </a>
 
+        <button class="mobile-menu" aria-label="Open menu">
+          ☰
+        </button>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/join-us">Join Us</a>
+        </nav>
+
       </div>
     </header>
+
+    <script>
+      const mobileMenu = document.querySelector<HTMLButtonElement>('.mobile-menu');
+      const mobileNav = document.querySelector<HTMLElement>('.mobile-nav');
+
+      mobileMenu?.addEventListener('click', () => {
+        const isOpen = mobileNav?.classList.toggle('is-open') ?? false;
+        mobileMenu.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      });
+
+      mobileNav?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => mobileNav.classList.remove('is-open'));
+      });
+    </script>
 
 
     <!-- HERO -->
