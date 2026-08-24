@@ -3,6 +3,11 @@ import "../styles/global.css";
 
 import { getPublishedPosts, type BlogPost } from "../lib/notion";
 
+Astro.response.headers.set(
+  "Cache-Control",
+  "s-maxage=60, stale-while-revalidate=300",
+);
+
 const fallbackPosts: BlogPost[] = [
   {
     title: "Getting Started with Web Development",
@@ -327,7 +332,7 @@ const categories = [
 
           <h2>
             Have something
-            <span>to say?</span>
+            <span>  to say?</span>
           </h2>
 
           <p>

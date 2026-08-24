@@ -76,6 +76,29 @@ npm run build
 
 The generated static site is written to `dist/` and can be deployed to any static hosting provider.
 
+## Automatic Notion Publishing
+
+The Blog page reads published posts from Notion at runtime and caches the response for 60 seconds. New published posts normally appear within about one minute without a Vercel redeployment.
+
+To configure the Notion connection:
+
+1. In Vercel, open the project and go to `Settings > Deploy Hooks`.
+2. Create a hook named `Notion Blog Update`, select the production branch (`main`), and copy the generated URL.
+3. In Notion, open the `CSI CVRCE Blog` database and create an automation for a page being added or updated.
+4. Add a `Send webhook` action and paste the Vercel Deploy Hook URL. If Notion does not provide webhook actions on your plan, use Make or Zapier to watch the database and send a `POST` request to the Vercel URL.
+5. Test the hook from PowerShell:
+
+```powershell
+Invoke-WebRequest -Method POST -Uri "PASTE_VERCEL_DEPLOY_HOOK_URL_HERE"
+```
+
+6. In Vercel, add `NOTION_TOKEN` and `NOTION_DATABASE_ID` under `Settings > Environment Variables` for the `Production` environment.
+7. Keep new posts as `Draft` while editing and change `Status` to `Published` only when ready.
+
+The Vercel Deploy Hook is optional for the runtime Blog setup. It can still be used when you want to rebuild the whole site after a content change, but normal Blog updates no longer require it.
+
+Never commit `.env` or paste `NOTION_TOKEN` into GitHub, Vercel logs, or chat. Rotate the token immediately if it has been exposed.
+
 ## Links
 
 - GitHub: https://github.com/csi-cvrce

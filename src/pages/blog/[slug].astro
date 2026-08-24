@@ -2,30 +2,32 @@
 import "../../styles/global.css";
 import { getPublishedPosts } from "../../lib/notion";
 
-export async function getStaticPaths() {
-  let posts = [];
+Astro.response.headers.set(
+  "Cache-Control",
+  "s-maxage=60, stale-while-revalidate=300",
+);
 
-  try {
-    posts = await getPublishedPosts();
-  } catch (error) {
-    console.warn("Unable to load Notion article paths.", error);
-  }
+let posts = [];
 
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+try {
+  posts = await getPublishedPosts();
+} catch (error) {
+  console.warn("Unable to load Notion article.", error);
 }
 
-const { post } = Astro.props;
+const post = posts.find((item) => item.slug === Astro.params.slug);
+
+if (!post) {
+  Astro.response.status = 404;
+}
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{post.title} | CSI CVRCE</title>
-    <meta name="description" content={post.excerpt || post.title} />
+    <title>{post ? `${post.title} | CSI CVRCE` : "Blog Post Not Found | CSI CVRCE"}</title>
+    <meta name="description" content={post?.excerpt || "Blog post not found."} />
   </head>
   <body>
     <header class="navbar">
@@ -60,16 +62,26 @@ const { post } = Astro.props;
     <main>
       <article class="blog-article">
         <a class="text-link" href="/blog"><span>←</span> Back to Blog</a>
-        <div class="hero-badge"><span></span>{post.category}</div>
-        <h1>{post.title}</h1>
-        <div class="blog-meta">
-          <span>{post.date}</span>
-          <span>•</span>
-          <span>{post.author}</span>
-        </div>
-        {post.image && <img class="blog-article-image" src={post.image} alt={post.title} />}
-        <p class="blog-article-excerpt">{post.excerpt}</p>
-        <div class="blog-article-content" set:html={post.content} />
+        {post ? (
+          <>
+            <div class="hero-badge"><span></span>{post.category}</div>
+            <h1>{post.title}</h1>
+            <div class="blog-meta">
+              <span>{post.date}</span>
+              <span>•</span>
+              <span>{post.author}</span>
+            </div>
+            {post.image && <img class="blog-article-image" src={post.image} alt={post.title} />}
+            <p class="blog-article-excerpt">{post.excerpt}</p>
+            <div class="blog-article-content" set:html={post.content} />
+          </>
+        ) : (
+          <>
+            <div class="hero-badge"><span></span>NOT FOUND</div>
+            <h1>Article not found.</h1>
+            <p class="blog-article-excerpt">This blog post may be unpublished or the link may be incorrect.</p>
+          </>
+        )}
       </article>
     </main>
 
