@@ -60,7 +60,15 @@ const faculty = [
   },
 ];
 
-const studentOrganisers = [
+type Student = {
+  name: string;
+  role: string;
+  details: string;
+  image: typeof Rutwika | string;
+  linkedin?: string;
+};
+
+const studentOrganisers: Student[] = [
   {
     name: "Rutwika Goparaju",
     role: "Chairman",
@@ -155,6 +163,9 @@ const executiveMembers = [
     "S Safrin Fathima": safrin,
     "Kammampaty Vamshi": vamshiKammampaty,
     "Kondoju Srividya": kondojuSrividya,
+  }[name],
+  linkedin: {
+    "Surishetty Harivallabha Sai": "https://www.linkedin.com/in/vallabha-tech/",
   }[name],
 }));
 
@@ -429,9 +440,22 @@ const electionOfficers = [
                 {person.role}
               </span>
 
-              <small>
-                {person.details}
-              </small>
+              <div class="student-details-row">
+                <small>{person.details}</small>
+
+                {person.linkedin && (
+                  <a
+                    href={person.linkedin}
+                    class="student-linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${person.name}'s LinkedIn profile`}
+                    title="View LinkedIn profile"
+                  >
+                    <span aria-hidden="true">in</span>
+                  </a>
+                )}
+              </div>
 
             </div>
 
@@ -493,9 +517,26 @@ const electionOfficers = [
 
             <div class="student-info">
 
-              <h3>{person.name}</h3>
+              <h3>
+                {person.name}
+              </h3>
               <span>{person.role}</span>
-              <small>{person.details}</small>
+              <div class="student-details-row">
+                <small>{person.details}</small>
+
+                {person.linkedin && (
+                  <a
+                    href={person.linkedin}
+                    class="student-linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${person.name}'s LinkedIn profile`}
+                    title="View LinkedIn profile"
+                  >
+                    <span aria-hidden="true">in</span>
+                  </a>
+                )}
+              </div>
 
             </div>
 
