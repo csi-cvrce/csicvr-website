@@ -1,0 +1,434 @@
+---
+import "../styles/global.css";
+
+const posts = [
+  {
+    title: "Getting Started with Web Development",
+    excerpt:
+      "A practical introduction to modern web development, from HTML and CSS to building your first complete website.",
+    date: "24 Aug 2026",
+    category: "Web Development",
+    author: "CSI CVRCE",
+    image: "/images/blog/web-development.webp",
+    featured: true,
+  },
+  {
+    title: "Why Every Student Should Learn Git & GitHub",
+    excerpt:
+      "Version control is more than a developer tool. Learn why Git and GitHub are essential skills for students.",
+    date: "18 Aug 2026",
+    category: "Technology",
+    author: "CSI CVRCE",
+    image: "/images/blog/git-github.webp",
+  },
+  {
+    title: "The Rise of Artificial Intelligence",
+    excerpt:
+      "Understanding how AI is changing education, software development and the technology industry.",
+    date: "10 Aug 2026",
+    category: "Artificial Intelligence",
+    author: "CSI CVRCE",
+    image: "/images/blog/artificial-intelligence.webp",
+  },
+  {
+    title: "How Hackathons Build Real-World Skills",
+    excerpt:
+      "Hackathons are more than competitions. They teach teamwork, problem solving, communication and rapid development.",
+    date: "02 Aug 2026",
+    category: "Community",
+    author: "CSI CVRCE",
+    image: "/images/blog/hackathons.webp",
+  },
+  {
+    title: "Building Your First Portfolio",
+    excerpt:
+      "A strong portfolio can tell your story better than a resume. Here is how to build one that actually stands out.",
+    date: "25 Jul 2026",
+    category: "Career",
+    author: "CSI CVRCE",
+    image: "/images/blog/portfolio.webp",
+  },
+  {
+    title: "From Classroom to Industry",
+    excerpt:
+      "The skills that students should develop alongside their academic curriculum to prepare for the technology industry.",
+    date: "15 Jul 2026",
+    category: "Career",
+    author: "CSI CVRCE",
+    image: "/images/blog/industry.webp",
+  },
+];
+
+const categories = [
+  "All",
+  "Technology",
+  "Web Development",
+  "Artificial Intelligence",
+  "Career",
+  "Community",
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Blog | CSI CVRCE</title>
+
+    <meta
+      name="description"
+      content="Read the latest technology, career and community articles from CSI CVRCE."
+    />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+      <div class="nav-container">
+
+        <a href="/" class="brand">
+          <img
+            src="/images/cvrlogo.png"
+            alt="CVR College of Engineering Logo"
+            class="cvr-logo"
+          />
+
+          <span class="divider"></span>
+
+          <img
+            src="/images/csicvrlogo.png"
+            alt="CSI Logo"
+            class="csi-logo"
+          />
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/blog" class="active">Blog</a>
+        </nav>
+
+        <a href="/join-us" class="nav-button">
+          Join Us
+        </a>
+
+        <button class="mobile-menu" aria-label="Open menu">
+          ☰
+        </button>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/blog">Blog</a>
+          <a href="/join-us">Join Us</a>
+        </nav>
+
+      </div>
+    </header>
+
+    <script>
+      const mobileMenu = document.querySelector<HTMLButtonElement>('.mobile-menu');
+      const mobileNav = document.querySelector<HTMLElement>('.mobile-nav');
+
+      mobileMenu?.addEventListener('click', () => {
+        const isOpen = mobileNav?.classList.toggle('is-open') ?? false;
+        mobileMenu.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      });
+
+      mobileNav?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => mobileNav.classList.remove('is-open'));
+      });
+    </script>
+
+
+    <!-- HERO -->
+
+    <main>
+
+      <section class="blog-hero">
+
+        <div class="hero-badge">
+          <span></span>
+          CSI CVRCE
+        </div>
+
+        <h1>
+          Ideas.
+          <span>Insights.</span>
+        </h1>
+
+        <p>
+          Stories, technical insights, career advice and
+          ideas from the CSI CVRCE community.
+        </p>
+
+      </section>
+
+
+      <!-- BLOG -->
+
+      <section class="blog-section">
+
+        <div class="blog-heading">
+
+          <div>
+            <div class="section-label">
+              <span>01</span>
+              FROM THE COMMUNITY
+            </div>
+
+            <h2>
+              Latest
+              <span>Stories.</span>
+            </h2>
+          </div>
+
+          <p>
+            Explore articles written around technology,
+            innovation, careers and student life.
+          </p>
+
+        </div>
+
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="blog-filters">
+
+          {categories.map((category) => (
+            <button
+              class:list={[
+                "blog-filter",
+                { active: category === "All" },
+              ]}
+              data-category={category}
+            >
+              {category}
+            </button>
+          ))}
+
+        </div>
+
+
+        <!-- POSTS -->
+
+        <div class="blog-grid">
+
+          {posts.map((post) => (
+
+            <article
+              class:list={[
+                "blog-card",
+                { "blog-featured": post.featured },
+              ]}
+              data-category={post.category}
+            >
+
+              <a href={`/blog/${post.title.toLowerCase().replaceAll(" ", "-")}`}>
+
+                <div class="blog-image">
+
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+
+                  <span class="blog-category">
+                    {post.category}
+                  </span>
+
+                </div>
+
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span>{post.author}</span>
+                  </div>
+
+                  <h3>
+                    {post.title}
+                  </h3>
+
+                  <p>
+                    {post.excerpt}
+                  </p>
+
+                  <span class="read-more">
+                    Read Article
+                    <span>↗</span>
+                  </span>
+
+                </div>
+
+              </a>
+
+            </article>
+
+          ))}
+
+        </div>
+
+      </section>
+
+
+      <!-- CTA -->
+
+      <section class="blog-cta">
+
+        <div>
+
+          <div class="hero-badge">
+            <span></span>
+            CSI CVRCE
+          </div>
+
+          <h2>
+            Have something
+            <span>to say?</span>
+          </h2>
+
+          <p>
+            Share your ideas, technical knowledge and
+            experiences with the CSI community.
+          </p>
+
+          <a href="/join-us" class="primary-button">
+            Join CSI
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <div class="footer-logos">
+            <img
+              src="/images/csicvrlogo.png"
+              alt="CSI CVRCE"
+            />
+          </div>
+
+          <h3>CSI CVRCE</h3>
+
+          <p>
+            Computer Society of India - CVR College of
+            Engineering Student Chapter.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Quick Links</h4>
+
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/blog">Blog</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>Contact</h4>
+
+          <a href="mailto:csi@cvr.ac.in">
+            csi@cvr.ac.in
+          </a>
+
+          <span>
+            CVR College of Engineering
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © {new Date().getFullYear()} CSI CVRCE
+        </span>
+
+        <span>
+          Built with purpose.
+        </span>
+
+      </div>
+
+    </footer>
+
+
+    <!-- CATEGORY FILTER -->
+
+    <script>
+      const filters =
+        document.querySelectorAll(".blog-filter");
+
+      const cards =
+        document.querySelectorAll(".blog-card");
+
+      filters.forEach((filter) => {
+
+        filter.addEventListener("click", () => {
+
+          const category =
+            filter.dataset.category;
+
+          filters.forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          filter.classList.add("active");
+
+          cards.forEach((card) => {
+
+            if (
+              category === "All" ||
+              card.dataset.category === category
+            ) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+
+          });
+
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

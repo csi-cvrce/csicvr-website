@@ -27,38 +27,123 @@ import vaitlaTejasri from "../assets/team/Vaitla Tejasri.webp";
 import vallabha from "../assets/team/vallabha.webp";
 import vamshiKammampaty from "../assets/team/Vamshi Kammampaty.webp";
 
-const faculty = [
-  {
-    name: "Prof. L.C. Siva Reddy",
-    role: "Prof. & Vice Principal",
-    department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE.jpg",
-  },
-  {
-    name: "Dr. A. Vani Vathsala",
-    role: "Prof. & Head of the CSE Dept.",
-    department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE.jpg",
-  },
-  {
-    name: "Dr. C. Ramesh, M.Tech., Ph.D.",
-    role: "Associate Dean, Student Affairs",
-    department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE.jpg",
-  },
-  {
-    name: "Dr. S. Suguna Mallika, M.Tech., Ph.D.",
-    role: "Faculty Coordinator",
-    department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE.jpg",
-  },
-  {
-    name: "Dr. M. Sridevi, M.Tech., Ph.D.",
-    role: "Faculty Coordinator",
-    department: "CSI Student Branch Chapter",
-    image: "/images/team/PROFILE.jpg",
-  },
-];
+type Faculty = {
+  name: string;
+  designation: string;
+  department?: string;
+  email?: string;
+  image?: string;
+};
+
+const faculty: Faculty[] = [
+  ["Dr. A. Vani Vathsala", "Professor and HoD", "Computer Science and Engineering", "vani_vathsala@cvr.ac.in", "/images/team/PROFILE.jpg"],
+  ["Dr. Raghava V. Cherabuddi", "Professor", "Computer Science and Engineering"],
+  ["Dr. Raghava M", "Professor & Associate Dean, Alumni Affairs", "Computer Science and Engineering", "raghava.m@cvr.ac.in"],
+  ["Dr. B. Rambabu", "Professor & Associate Dean, Faculty Affairs", "Computer Science and Engineering", "b.rambabu@cvr.ac.in"],
+  ["Dr. C. Ramesh", "Professor & Associate Dean, Student Affairs", "Computer Science and Engineering", "hmcr.ramesh@cvr.ac.in", "/images/team/PROFILE.jpg"],
+  ["Dr. D. Durga Bhavani", "Professor & Coordinator-Student Affairs-CSE", "Computer Science and Engineering", "drddurgabhavani@cvr.ac.in"],
+  ["Dr. N. Subhash Chandra", "Professor", "Computer Science and Engineering", "subhashchandra@cvr.ac.in"],
+  ["Dr. V. Dattatreya", "Professor", "Computer Science and Engineering", "v.dattatreya@cvr.ac.in"],
+  ["Dr. G. Balakrishna", "Professor & Exam Branch Coordinator-CSE", "Computer Science and Engineering", "g.balakrishna@cvr.ac.in"],
+  ["Dr. S. Suguna Mallika", "Professor & NBA Coordinator-CSE", "Computer Science and Engineering", "ss.mallika@cvr.ac.in", "/images/team/PROFILE.jpg"],
+  ["Dr. D. Sandhya Rani", "Professor & Research Coordinator-CSE", "Computer Science and Engineering", "d.sandhyarani@cvr.ac.in"],
+  ["Dr. M. Sridevi", "Professor", "Computer Science and Engineering", "m.sridevi@cvr.ac.in", "/images/team/PROFILE.jpg"],
+  ["Mr. Suhail Afroz", "Assoc. Prof", "Computer Science and Engineering", "suhailafroz@cvr.ac.in"],
+  ["Dr. Ch. Ram Mohan", "Assoc. Professor & Coordinator, Faculty Affairs-CSE", "Computer Science and Engineering", "chramohan@cvr.ac.in"],
+  ["Ms. Sujana Cherabuddi", "Assoc. Prof", "Computer Science and Engineering"],
+  ["Mr. D. Sujan Kumar", "Assoc. Prof", "Computer Science and Engineering", "sujan.kumar@cvr.ac.in"],
+  ["Dr. M. Swamidas", "Assoc. Prof", "Computer Science and Engineering", "swamidas@cvr.ac.in"],
+  ["Dr. P. Kiran Kumar", "Assoc. Prof", "Computer Science and Engineering", "p.kirankumar@cvr.ac.in"],
+  ["Dr. M. Sagar", "Assoc. Prof", "Computer Science and Engineering", "msagarphd@cvr.ac.in"],
+  ["Dr. Srikanth Lakumarapu", "Assoc. Prof", "Computer Science and Engineering", "dr.srikanthcse@cvr.ac.in"],
+  ["Dr. Banoth Samya", "Assoc. Prof", "Computer Science and Engineering", "samyabanoth@cvr.ac.in"],
+  ["Dr. Ch. Sarada", "Assoc. Prof", "Computer Science and Engineering", "chintala.sarada@cvr.ac.in"],
+  ["Dr. Pinagadi Venkateswararao", "Assoc. Prof.", "Computer Science and Engineering", "drrao.pinagadi@cvr.ac.in"],
+  ["Dr. Ch. Bhavani", "Assoc. Prof.", "Information Technology", "ch.bhavani@cvr.ac.in"],
+  ["Dr. P. Madhavi", "Assoc. Prof.", "Computer Science and Engineering", "p.madhavi@cvr.ac.in"],
+  ["Dr. Karthik Karmakonda", "Assoc. Prof.", "Computer Science and Engineering"],
+  ["Dr. V. Rama Krishna", "Assoc. Prof.", undefined, "b.ramakrishna@cvr.ac.in"],
+  ["Mr. Syed Muqthadar Ali", "Sr. Asst. Prof.", "Computer Science and Engineering", "smali@cvr.ac.in"],
+  ["Mr. M. Hanimi Reddy", "Sr. Asst. Prof.", "Computer Science and Engineering", "mh.reddy@cvr.ac.in"],
+  ["Mr. R. Sahith", "Sr. Asst. Prof.", "Computer Science and Engineering", "r.sahith@cvr.ac.in"],
+  ["Ms. G. Swetha", "Sr. Asst. Prof.", "Computer Science and Engineering", "g.swetha@cvr.ac.in"],
+  ["Mr. B. Ashwin Kumar", "Sr. Asst. Prof.", "Computer Science and Engineering", "ashwin.kumar@cvr.ac.in"],
+  ["Ms. V.N.V.L.S. Swathi", "Sr. Asst. Prof.", "Computer Science and Engineering", "vnvls.swathi@cvr.ac.in"],
+  ["Mr. V. D. S. Krishna", "Sr. Asst. Prof.", "Computer Science and Engineering", "vds.krishna@cvr.ac.in"],
+  ["Mr. S. Srinivas", "Sr. Asst. Prof.", "Computer Science and Engineering", "s.srinivas@cvr.ac.in"],
+  ["Ms. K. Deepthi Reddy", "Sr. Asst. Prof.", "Computer Science and Engineering", "deepthi.reddy@cvr.ac.in"],
+  ["Ms. M. Archana", "Sr. Asst. Prof.", "Computer Science", "m.archana@cvr.ac.in"],
+  ["Ms. G. Sushma", "Sr. Asst. Prof.", "Software Engineering", "g.sushma@cvr.ac.in"],
+  ["Mr. G. Kalyana Chakravarthy", "Sr. Asst. Prof.", "Computer Science and Engineering", "gkc@cvr.ac.in"],
+  ["Ms. K. Sravani", "Sr. Asst. Prof.", "Computer Science and Engineering", "k.sravani@cvr.ac.in"],
+  ["Dr. P. Sampurnima", "Sr. Asst. Prof.", "Computer Science and Engineering", "sampurnima@cvr.ac.in"],
+  ["Mr. Giri Babu K", "Sr. Asst. Prof.", "Computer Science and Engineering", "giribabuk@cvr.ac.in"],
+  ["Ms. Yenugula Swapna", "Sr. Asst. Prof.", "Computer Science and Engineering", "yenugulaswapna@cvr.ac.in"],
+  ["Ms. M. Sangeetha", "Sr. Asst. Prof.", "Computer Science", "moligisangeetha@cvr.ac.in"],
+  ["Dr. V. Veerabhadram", "Sr. Asst. Prof.", "Computer Science", "drbhadram@cvr.ac.in"],
+  ["Mr. A. Bharath", "Sr. Asst. Prof.", "Computer Science", "bharath.andugula@cvr.ac.in"],
+  ["Ms. M. Ratna Sirisha", "Sr. Asst. Prof.", "Software Engineering", "msiri515@cvr.ac.in"],
+  ["Mr. B. Srikanth", "Sr. Asst. Prof.", "Computer Science and Engineering", "srikanthbethu@cvr.ac.in"],
+  ["Mr. T. Rama Rao", "Sr. Asst. Prof.", "Information Technology", "ramaraotandu@cvr.ac.in"],
+  ["Mr. R. Sathya Prakash", "Sr. Asst. Prof.", "Computer Science and Engineering", "satya.prakash@cvr.ac.in"],
+  ["Ms. A. Swathi", "Sr. Asst. Prof.", "Computer Science and Engineering", "a.swathi@cvr.ac.in"],
+  ["Ms. Thatikonda Radhika", "Sr. Asst. Prof.", "Computer Science and Engineering", "radhikathatikonda08@cvr.ac.in"],
+  ["Dr. Baddepaka Prasad", "Sr. Asst. Prof.", "Computer Science and Engineering", "prasad.baddepaka@cvr.ac.in"],
+  ["Ms. G. Sandhya", "Asst. Prof.", "Computer Science", "g.sandhya@cvr.ac.in"],
+  ["Ms. Shaik Farhana", "Asst. Prof.", "Computer Science and Engineering", "farhana@cvr.ac.in"],
+  ["Ms. G.V. Rama Lakshmi", "Asst. Prof.", "Computer Science and Engineering", "gvrlaksmi@cvr.ac.in"],
+  ["Mrs. Ch. Lavanya", "Asst. Prof.", "Computer Science and Engineering", "ch.lavanya@cvr.ac.in"],
+  ["Ms. G. Deepika", "Asst. Prof.", "Computer Science and Engineering", "g.deepika@cvr.ac.in"],
+  ["Mr. N. Srinu", "Asst. Prof.", "Computer Science and Engineering", "n.srinu@cvr.ac.in"],
+  ["Ms. Kannekanti Maanasa", "Asst. Prof.", "Computer Science and Engineering", "maanasakannekanti95@cvr.ac.in"],
+  ["Ms. Y. Sunitha", "Asst. Prof.", "Computer Science and Engineering", "yadasunitha@cvr.ac.in"],
+  ["Ms. M. Sunitha", "Asst. Prof.", "Computer Science and Engineering", "sunitha.mangalarm@cvr.ac.in"],
+  ["Ms. Salvadi Kasturi", "Asst. Prof.", "Computer Science and Engineering", "kasthurisalvadi@cvr.ac.in"],
+  ["Ms. Adusumalli Himabindu", "Asst. Prof.", "Computer Science and Engineering", "adusumalli7ahb@cvr.ac.in"],
+  ["Ms. Thatikonda Supraja", "Asst. Prof.", "Computer Science and Engineering", "supraja.t2@cvr.ac.in"],
+  ["Ms. G. Malleswari", "Asst. Prof.", "Computer Science", "gkmalleswari@cvr.ac.in"],
+  ["Dr. Annaram Soujanya", "Asst. Prof.", "Information and Communication Engineering", "a.soujanya@cvr.ac.in"],
+  ["Mr. Sudhakar Polepalli", "Asst. Prof.", "Computer Science and Engineering", "p.sudhakar@cvr.ac.in"],
+  ["Ms. Uma Rani Ananthula", "Asst. Prof.", "Computer Science and Engineering", "a.umarani@cvr.ac.in"],
+  ["Ms. Talapaneni Jyothi", "Asst. Prof.", "Data Science", "talapanenij@cvr.ac.in"],
+  ["Ms. Sharmila Bandlamudi", "Asst. Prof.", "Computer Science and Engineering", "sharmilabandlamudi@cvr.ac.in"],
+  ["Ms. Maddela. Nagamani", "Asst. Prof.", "Computer Science and Engineering", "aksanaga11@cvr.ac.in"],
+  ["Ms. Boinapalli Sindhu", "Asst. Prof.", "Computer Science and Engineering", "sindhu1209@cvr.ac.in"],
+  ["Ms. Mandadi Bhagyalaxmi", "Asst. Prof.", "Computer Science and Engineering", "m.bhagyalaxmi@cvr.ac.in"],
+  ["Mr. Damerla Chaithanya", "Asst. Prof.", "Computer Science and Engineering", "damerlachaithanya@cvr.ac.in"],
+  ["Mr. P. Niranjan Kumar", "Asst. Prof.", "Computer Science and Engineering", "niranjan.1216@cvr.ac.in"],
+  ["Ms. Swathi Odugu", "Asst. Prof.", "Computer Science and Engineering", "oduguswathi@cvr.ac.in"],
+  ["Ms. Thatiparthy Pavani", "Asst. Prof.", "Computer Science and Engineering", "pavanithatiparthi76@cvr.ac.in"],
+  ["Ms. Duba Sriveni", "Asst. Prof.", "Deep Learning", "sriveni.dubas@cvr.ac.in"],
+  ["Mr. Datla Ganesh", "Asst. Prof.", "Data Science", "datlaganesh20@cvr.ac.in"],
+  ["Ms. Gurram Shravya", "Asst. Prof.", "Artificial Intelligence", "shravyaacademics121@cvr.ac.in"],
+  ["Ms. B. Divya Jyothi", "Asst. Prof.", "Computer Science and Engineering", "soni.divya17@cvr.ac.in"],
+  ["Mr. D. Sanchith Sai", "Asst. Prof.", "Computer Science and Engineering", "dsanchithsai37@cvr.ac.in"],
+  ["Ms. Divya Bonigala", "Asst. Prof.", "Business Analytics", "divyabonigala2@cvr.ac.in"],
+  ["Ms. Sankoju Bhavani", "Asst. Prof.", "Artificial Intelligence", "sankojubhavani@cvr.ac.in"],
+  ["Mr. Gamidelli Yedukondalu", "Asst. Prof.", "Computer Science and Engineering", "yedukondalu8@cvr.ac.in"],
+  ["Ms. Kallem Anusha", "Asst. Prof.", "Computer Science and Engineering", "anushareddy.kallem@cvr.ac.in"],
+  ["Mr. Gundepogu Venugopalarao", "Asst. Prof.", "Computer Science and Engineering", "gvenugopalarao@cvr.ac.in"],
+  ["Mr. Akula Pramod Raj", "Asst. Prof.", "Computer Science and Engineering", "akulapramodraj86@cvr.ac.in"],
+  ["Ms. Sonti Bharathi", "Asst. Prof.", "Artificial Intelligence", "s.bharathi@cvr.ac.in"],
+  ["Mr. Prakath Thirandasu", "Asst. Prof.", "Artificial Intelligence", "prakashthirandasu@cvr.ac.in"],
+  ["Mr. Shankarpally Vijay", "Asst. Prof.", "Software Engineering", "vijay.shankarpally@cvr.ac.in"],
+  ["Mr. Venkateswarlu Kuruma", "Asst. Prof.", "Computer Science and Engineering", "k.venkateswarlu@cvr.ac.in"],
+  ["Mr. Guravaiah Koppula", "Asst. Prof.", "Computer Science", "gurumtech.cs@cvr.ac.in"],
+  ["Ms. P. Lavanya Kumari", "Asst. Prof.", "CST with Computer Networks", "plavanyakumari2025@cvr.ac.in"],
+  ["Ms. Archana Nagelli", "Asst. Prof.", "Software Engineering", "archana.nagelli@cvr.ac.in"],
+  ["Mr. B. Sanjeev", "Asst. Prof.", "Computer Science and Engineering", "sanjeev.datadev@cvr.ac.in"],
+  ["Ms. D. Shashi Rekha", "Asst. Prof.", "Computer Science and Engineering", "sashi.mtech@cvr.ac.in"],
+  ["Mr. V. Praveen Goud", "Asst. Prof.", "Artificial Intelligence", "praveenvaraganti@cvr.ac.in"],
+  ["Ms. T. Durga Bhavani", "Asst. Prof.", "Artificial Intelligence", "vaidyulabhavani@cvr.ac.in"],
+  ["Ms. M. Swapna", "Asst. Prof.", "Artificial Intelligence", "Swapna5959@cvr.ac.in"],
+].map(([name, designation, department, email, image]) => ({
+  name,
+  designation,
+  department,
+  email,
+  image,
+}));
 
 type Student = {
   name: string;
@@ -262,6 +347,7 @@ const electionOfficers = [
         <a href="/events">Events</a>
         <a href="/gallery">Gallery</a>
         <a href="/team" class="active">Team</a>
+        <a href="/blog">Blog</a>
       </nav>
 
       <a href="/join-us" class="nav-button">
@@ -278,6 +364,7 @@ const electionOfficers = [
         <a href="/events">Events</a>
         <a href="/gallery">Gallery</a>
         <a href="/team">Team</a>
+        <a href="/blog">Blog</a>
         <a href="/join-us">Join Us</a>
       </nav>
 
@@ -324,10 +411,34 @@ const electionOfficers = [
 
     </section>
 
+    <div class="team-switcher" role="tablist" aria-label="Choose a team group">
+      <button
+        type="button"
+        class="team-switcher-button is-active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="faculty-coordinators"
+        data-team-view="faculty-coordinators"
+      >
+        Faculty Coordinators
+      </button>
+      <button
+        type="button"
+        class="team-switcher-button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="student-committee"
+        tabindex="-1"
+        data-team-view="student-committee"
+      >
+        Student Committee
+      </button>
+    </div>
+
 
     <!-- FACULTY -->
 
-    <section class="team-section">
+    <section id="faculty-coordinators" class="team-section team-view">
 
       <div class="section-label">
         <span>01</span>
@@ -357,11 +468,13 @@ const electionOfficers = [
 
             <div class="faculty-image">
 
-              <img
-                src={person.image}
-                alt={person.name}
-                loading="lazy"
-              />
+              {person.image && (
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  loading="lazy"
+                />
+              )}
 
             </div>
 
@@ -375,13 +488,15 @@ const electionOfficers = [
                 {person.name}
               </h3>
 
-              <strong>
-                {person.role}
-              </strong>
+              <strong>{person.designation}</strong>
 
-              <p>
-                {person.department}
-              </p>
+              {person.department && <p>{person.department}</p>}
+
+              {person.email && (
+                <a class="faculty-email" href={`mailto:${person.email}`}>
+                  {person.email}
+                </a>
+              )}
 
             </div>
 
@@ -394,9 +509,11 @@ const electionOfficers = [
     </section>
 
 
-    <!-- STUDENT ORGANISERS -->
+    <div id="student-committee" class="team-view" hidden>
 
-    <section class="team-section student-section">
+      <!-- STUDENT ORGANISERS -->
+
+      <section class="team-section student-section">
 
       <div class="section-label">
         <span>02</span>
@@ -486,12 +603,12 @@ const electionOfficers = [
 
       </div>
 
-    </section>
+      </section>
 
 
-    <!-- EXECUTIVE MEMBERS -->
+      <!-- EXECUTIVE MEMBERS -->
 
-    <section class="team-section executive-section">
+      <section class="team-section executive-section">
 
       <div class="section-label">
         <span>03</span>
@@ -567,27 +684,29 @@ const electionOfficers = [
 
       </div>
 
-    </section>
+      </section>
+
+    </div>
 
 
-    <!-- ADVISORY COMMITTEE -->
+    <!-- Student ADVISORY COMMITTEE -->
 
     <section class="team-section advisory-section">
 
       <div class="section-label">
         <span>04</span>
-        ADVISORY COMMITTEE
+        STUDENT ADVISORY COMMITTEE
       </div>
 
       <div class="section-heading">
 
         <h2>
           Guided by
-          <span>advisors.</span>
+          <span>  advisors.</span>
         </h2>
 
         <p>
-          Members of the advisory committee supporting the CSI chapter.
+          Members of the student advisory committee supporting the CSI chapter.
         </p>
 
       </div>
@@ -694,6 +813,29 @@ const electionOfficers = [
     </section>
 
   </main>
+
+  <script>
+    const teamSwitcherButtons = document.querySelectorAll<HTMLButtonElement>('[data-team-view]');
+
+    teamSwitcherButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedView = button.dataset.teamView;
+
+        if (!selectedView) return;
+
+        teamSwitcherButtons.forEach((item) => {
+          const isSelected = item === button;
+          item.classList.toggle('is-active', isSelected);
+          item.setAttribute('aria-selected', String(isSelected));
+          item.tabIndex = isSelected ? 0 : -1;
+        });
+
+        document.querySelectorAll<HTMLElement>('.team-view').forEach((view) => {
+          view.hidden = view.id !== selectedView;
+        });
+      });
+    });
+  </script>
 
 
   <!-- FOOTER -->
