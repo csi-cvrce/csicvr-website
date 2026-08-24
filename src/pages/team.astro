@@ -192,6 +192,11 @@ const advisoryCommittee = [
 ].map(([name, rollNumber, membershipId]) => ({
   name,
   details: `${rollNumber} | Membership ID: ${membershipId}`,
+  linkedin: {
+    "Nikhitha Madhagoni": "https://www.linkedin.com/in/nikhitha-madhagoni/",
+    "Shaik Sofiya":"https://www.linkedin.com/in/sofiyass21/",
+    "Vuppala Ujwala":"https://www.linkedin.com/in/ujwalarajender-vuppala/",
+  }[name] ?? "https://www.linkedin.com/in/vallabha-tech/",
   image: {
     "Nikhitha Madhagoni": nikhithaMadhagoni,
     "Shaik Sofiya": sofia,
@@ -613,7 +618,22 @@ const electionOfficers = [
 
             <div class="advisory-info">
               <h3>{person.name}</h3>
-              <p>{person.details}</p>
+              <div class="student-details-row">
+                <p>{person.details}</p>
+
+                {person.linkedin && (
+                  <a
+                    href={person.linkedin}
+                    class="student-linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${person.name}'s LinkedIn profile`}
+                    title="View LinkedIn profile"
+                  >
+                    <span aria-hidden="true">in</span>
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}
