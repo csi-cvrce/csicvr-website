@@ -1,0 +1,86 @@
+---
+import "../../styles/global.css";
+import { getPublishedPosts } from "../../lib/notion";
+
+export async function getStaticPaths() {
+  let posts = [];
+
+  try {
+    posts = await getPublishedPosts();
+  } catch (error) {
+    console.warn("Unable to load Notion article paths.", error);
+  }
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{post.title} | CSI CVRCE</title>
+    <meta name="description" content={post.excerpt || post.title} />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="/" class="brand">
+          <img src="/images/cvrlogo.png" alt="CVR College of Engineering Logo" class="cvr-logo" />
+          <span class="divider"></span>
+          <img src="/images/csicvrlogo.png" alt="CSI Logo" class="csi-logo" />
+        </a>
+        <nav class="desktop-nav">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/blog" class="active-nav">Blog</a>
+        </nav>
+        <a href="/join-us" class="nav-button">Join Us</a>
+        <button class="mobile-menu" aria-label="Open menu">☰</button>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/events">Events</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/team">Team</a>
+          <a href="/blog">Blog</a>
+          <a href="/join-us">Join Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="blog-article">
+        <a class="text-link" href="/blog"><span>←</span> Back to Blog</a>
+        <div class="hero-badge"><span></span>{post.category}</div>
+        <h1>{post.title}</h1>
+        <div class="blog-meta">
+          <span>{post.date}</span>
+          <span>•</span>
+          <span>{post.author}</span>
+        </div>
+        {post.image && <img class="blog-article-image" src={post.image} alt={post.title} />}
+        <p class="blog-article-excerpt">{post.excerpt}</p>
+        <div class="blog-article-content" set:html={post.content} />
+      </article>
+    </main>
+
+    <script>
+      const mobileMenu = document.querySelector<HTMLButtonElement>('.mobile-menu');
+      const mobileNav = document.querySelector<HTMLElement>('.mobile-nav');
+      mobileMenu?.addEventListener('click', () => {
+        const isOpen = mobileNav?.classList.toggle('is-open') ?? false;
+        mobileMenu.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      });
+    </script>
+  </body>
+</html>

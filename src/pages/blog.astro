@@ -1,9 +1,12 @@
 ---
 import "../styles/global.css";
 
-const posts = [
+import { getPublishedPosts, type BlogPost } from "../lib/notion";
+
+const fallbackPosts: BlogPost[] = [
   {
     title: "Getting Started with Web Development",
+    slug: "getting-started-with-web-development",
     excerpt:
       "A practical introduction to modern web development, from HTML and CSS to building your first complete website.",
     date: "24 Aug 2026",
@@ -11,61 +14,82 @@ const posts = [
     author: "CSI CVRCE",
     image: "/images/blog/web-development.webp",
     featured: true,
+    content: "",
   },
   {
     title: "Why Every Student Should Learn Git & GitHub",
+    slug: "why-every-student-should-learn-git-and-github",
     excerpt:
       "Version control is more than a developer tool. Learn why Git and GitHub are essential skills for students.",
     date: "18 Aug 2026",
     category: "Technology",
     author: "CSI CVRCE",
     image: "/images/blog/git-github.webp",
+    featured: false,
+    content: "",
   },
   {
     title: "The Rise of Artificial Intelligence",
+    slug: "the-rise-of-artificial-intelligence",
     excerpt:
       "Understanding how AI is changing education, software development and the technology industry.",
     date: "10 Aug 2026",
     category: "Artificial Intelligence",
     author: "CSI CVRCE",
     image: "/images/blog/artificial-intelligence.webp",
+    featured: false,
+    content: "",
   },
   {
     title: "How Hackathons Build Real-World Skills",
+    slug: "how-hackathons-build-real-world-skills",
     excerpt:
       "Hackathons are more than competitions. They teach teamwork, problem solving, communication and rapid development.",
     date: "02 Aug 2026",
     category: "Community",
     author: "CSI CVRCE",
     image: "/images/blog/hackathons.webp",
+    featured: false,
+    content: "",
   },
   {
     title: "Building Your First Portfolio",
+    slug: "building-your-first-portfolio",
     excerpt:
       "A strong portfolio can tell your story better than a resume. Here is how to build one that actually stands out.",
     date: "25 Jul 2026",
     category: "Career",
     author: "CSI CVRCE",
     image: "/images/blog/portfolio.webp",
+    featured: false,
+    content: "",
   },
   {
     title: "From Classroom to Industry",
+    slug: "from-classroom-to-industry",
     excerpt:
       "The skills that students should develop alongside their academic curriculum to prepare for the technology industry.",
     date: "15 Jul 2026",
     category: "Career",
     author: "CSI CVRCE",
     image: "/images/blog/industry.webp",
+    featured: false,
+    content: "",
   },
 ];
 
+let posts = fallbackPosts;
+
+try {
+  const notionPosts = await getPublishedPosts();
+  if (notionPosts.length > 0) posts = notionPosts;
+} catch (error) {
+  console.warn("Unable to load Notion posts; using fallback posts.", error);
+}
+
 const categories = [
   "All",
-  "Technology",
-  "Web Development",
-  "Artificial Intelligence",
-  "Career",
-  "Community",
+  ...new Set(posts.map((post) => post.category)),
 ];
 ---
 
@@ -234,16 +258,20 @@ const categories = [
               data-category={post.category}
             >
 
-              <a href={`/blog/${post.title.toLowerCase().replaceAll(" ", "-")}`}>
+              <a href={`/blog/${post.slug}`}>
 
                 <div class="blog-image">
 
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div class="blog-image-placeholder" aria-hidden="true">CSI</div>
+                  )}
 
                   <span class="blog-category">
                     {post.category}
