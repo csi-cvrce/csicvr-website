@@ -284,6 +284,8 @@ const events = [
     ],
   },
 ];
+
+const orderedEvents = [...events].reverse();
 ---
 
 <html lang="en">
@@ -391,7 +393,7 @@ const events = [
   </div>
 
   <div class="events-count">
-    <strong>{events.length}+</strong>
+    <strong>{orderedEvents.length}+</strong>
     <span>Recorded Events</span>
   </div>
 
@@ -493,7 +495,7 @@ const events = [
 
   <div class="event-grid">
 
-    {events.map((event, index) => (
+    {orderedEvents.map((event, index) => (
 
       <article
         class="event-card"
